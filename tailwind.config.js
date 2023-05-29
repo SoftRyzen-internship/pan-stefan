@@ -8,7 +8,7 @@ module.exports = {
       screens: {
         xs: '320px',
         md: '768px',
-        xl: '1480px',
+        xl: '1280px',
       },
       colors: {
         lightWite: '#FCF8FF',
@@ -21,8 +21,9 @@ module.exports = {
         },
       },
       fontFamily: {
-        // 'display': ['FixelDisplay-Bold'],
-        // 'body': ['"Open Sans"'],
+        'display': ['Fixel Display'],
+        'cormorant': ['Cormorant Infant'],
+        'tanPearl': ['TAN-PEARL'],
       },
       container: {
         padding: {
@@ -31,6 +32,7 @@ module.exports = {
           md: '32px',
           xl: '32px',
         },
+
       },
     },
   },
