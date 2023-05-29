@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'TAN-PEARL';
+  src: local('TAN-PEARL Regular'), local('TAN-PEARL-Regular'),
+    url('../../public/fonts/TAN-PEARL-Regular.woff2') format('woff2'),
+    url('../../public/fonts/TAN-PEARL-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fixel Display';
+  src: local('Fixel Display Light'), local('FixelDisplay-Light'),
+    url('../../public/fonts/FixelDisplay-Light.woff2') format('woff2'),
+    url('../../public/fonts/FixelDisplay-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fixel Display';
+  src: local('Fixel Display Medium'), local('FixelDisplay-Medium'),
+    url('../../public/fonts/FixelDisplay-Medium.woff2') format('woff2'),
+    url('../../public/fonts/FixelDisplay-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fixel Display';
+  src: local('Fixel Display Regular'), local('FixelDisplay-Regular'),
+    url('../../public/fonts/FixelDisplay-Regular.woff2') format('woff2'),
+    url('../../public/fonts/FixelDisplay-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fixel Display';
+  src: local('Fixel Display Bold'), local('FixelDisplay-Bold'),
+    url('../../public/fonts/FixelDisplay-Bold.woff2') format('woff2'),
+    url('../../public/fonts/FixelDisplay-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* font-family: 'Cormorant Infant', serif; */
+
+:root {
+  --text-color: #e63838;
+  --text-size: 16px;
+}
+
+body {
+  background-color: theme('colors.lightWite');
+  color: var(--text-color);
+  font-size: var(--text-size);
+  font-family: Cormorant Infant;
+  font-weight: 400;
+}
+
+@layer components {
+  .section {
+    padding: 60px 0;
+
+    @media (min-width: 768px) {
+      padding: 40px 0;
+    }
+  }
+
+  .container {
+    margin: 0 auto;
+  }
+}
