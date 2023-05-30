@@ -1,3 +1,4 @@
+import DropDown from '@/components/DropDown/DropDown';
 import Layout from '@/components/Layout/Layout';
 
 export default function Home() {
