@@ -18,8 +18,8 @@ module.exports = {
           80: '#5C4083',
         },
         red: {
-          80: '#EF4444'
-        }
+          80: '#EF4444',
+        },
       },
       fontFamily: {
         display: ['Fixel Display'],
@@ -27,6 +27,11 @@ module.exports = {
         tanPearl: ['TAN-PEARL'],
       },
       container: {
+        screens: {
+          xs: '320px',
+          md: '768px',
+          xl: '1280px',
+        },
         padding: {
           DEFAULT: '32px',
           xs: '20px',
