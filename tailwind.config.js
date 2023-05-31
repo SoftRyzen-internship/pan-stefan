@@ -19,6 +19,9 @@ module.exports = {
           30: '#9C89B3',
           80: '#5C4083'
         },
+        red: {
+          80: '#EF4444'
+        }
       },
       fontFamily: {
         'display': ['Fixel Display'],

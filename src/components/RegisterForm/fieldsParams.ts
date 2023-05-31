@@ -1,6 +1,24 @@
-const fieldsParams = {
+const fieldsParams: {
+  [key: string]: {
+    required?: {
+      message: string;
+    };
+    minLength?: {
+      value: number;
+      message: string;
+    };
+    maxLength?: {
+      value: number;
+      message: string;
+    };
+    pattern?: {
+      value: RegExp;
+      message: string;
+    };
+  };
+} = {
   username: {
-    required: `*Це поле обов'язкове`,
+    required: { message: `*Це поле обов'язкове` },
     minLength: {
       value: 2,
       message: `Ім'я повинно містити не менше 2 символів`,
@@ -12,9 +30,9 @@ const fieldsParams = {
   },
 
   phone: {
-    required: `*Це поле обов'язкове`,
+    required: { message: `*Це поле обов'язкове` },
     pattern: {
-      value: /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/,
+      value: /^(\+380)\d{9}$/,
       message: '*Не вірний формат номеру',
     },
     minLength: {
@@ -22,7 +40,7 @@ const fieldsParams = {
       message: '*Не вірний формат номеру',
     },
     maxLength: {
-      value: 10,
+      value: 13,
       message: '*Не вірний формат номеру',
     },
   },
@@ -30,11 +48,11 @@ const fieldsParams = {
   comment: {
     minLength: {
       value: 2,
-      message: 'Коментар маж містити не менше 2 символів',
+      message: 'Коментар має містити не менше 2 символів',
     },
     maxLength: {
       value: 200,
-      message: 'Коментар маж містити не більше 200 символів',
+      message: 'Коментар має містити не більше 200 символів',
     },
   },
 };

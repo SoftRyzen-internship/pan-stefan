@@ -1,4 +1,4 @@
-import { UseFormRegister } from 'react-hook-form';
+import { UseFormRegister, RegisterOptions } from 'react-hook-form';
 
 interface IFieldProps {
   data: {
@@ -8,18 +8,7 @@ interface IFieldProps {
   };
   reg: UseFormRegister<any>;
   errors?: any;
-  options: {
-    required?: string;
-    minLength?: {
-      value: number;
-      message: string;
-    };
-    maxLength?: {
-      value: number;
-      message: string;
-    };
-    pattern?: { value: RegExp; message: string };
-  };
+  options: any;
 }
 
 export default IFieldProps;
