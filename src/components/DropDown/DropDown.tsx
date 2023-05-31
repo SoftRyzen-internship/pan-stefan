@@ -1,9 +1,13 @@
-import { Fragment, useRef, useState } from 'react';
+import { Fragment, ReactNode, useRef, useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 
 import CloseModal from '../../../public/CloseModal.svg';
 
-function DropDown() {
+interface DropDownProps {
+  children: ReactNode;
+}
+
+function DropDown(props: DropDownProps) {
   const [open, setOpen] = useState(false);
 
   const cancelButtonRef = useRef(null);
@@ -16,7 +20,7 @@ function DropDown() {
           className="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto"
           onClick={() => setOpen(true)}
         >
-          Open
+          Openn
         </button>
       </div>
 
@@ -45,22 +49,21 @@ function DropDown() {
                 leaveFrom="opacity-100 translate-y-0 sm:scale-100"
                 leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-90"
               >
-                <Dialog.Panel className="relative border border-purple-80 h-auto w-[463px] py-10 transform rounded-[20px] bg-lightWite transition-all">
-                  <div className="">
-                    <button
-                      aria-label="Close form"
-                      type="button"
-                      className="absolute top-2 right-2"
-                      onClick={() => setOpen(false)}
-                    >
-                      <CloseModal
-                        className="p-[6px] hover:opacity-90 rotate-0 hover:rotate-90 transition-all"
-                        width={28}
-                        height={28}
-                        loading="lazy"
-                      />
-                    </button>
-                  </div>
+                <Dialog.Panel className="relative border border-purple-80 h-auto w-[463px] p-10 transform rounded-[20px] bg-lightWite transition-all">
+                  <button
+                    aria-label="Close form"
+                    type="button"
+                    className="absolute top-2 right-2"
+                    onClick={() => setOpen(false)}
+                  >
+                    <CloseModal
+                      className="p-[6px] hover:opacity-90 rotate-0 hover:rotate-90 transition-all"
+                      width={28}
+                      height={28}
+                      loading="lazy"
+                    />
+                  </button>
+                  {props.children}
                 </Dialog.Panel>
               </Transition.Child>
             </div>
