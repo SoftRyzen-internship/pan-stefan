@@ -1,6 +1,6 @@
-import { FC, Fragment, PropsWithChildren, useRef, useState, ReactNode } from 'react';
+import { Fragment, ReactNode, useRef, useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
-import RegisterForm from '../RegisterForm/RegisterForm';
+
 import CloseModal from '../../../public/CloseModal.svg';
 
 interface DropDownProps {
@@ -20,7 +20,7 @@ function DropDown(props: DropDownProps) {
           className="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto"
           onClick={() => setOpen(true)}
         >
-          Open
+          Openn
         </button>
       </div>
 
@@ -50,22 +50,20 @@ function DropDown(props: DropDownProps) {
                 leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-90"
               >
                 <Dialog.Panel className="relative border border-purple-80 h-auto w-[463px] p-10 transform rounded-[20px] bg-lightWite transition-all">
+                  <button
+                    aria-label="Close form"
+                    type="button"
+                    className="absolute top-2 right-2"
+                    onClick={() => setOpen(false)}
+                  >
+                    <CloseModal
+                      className="p-[6px] hover:opacity-90 rotate-0 hover:rotate-90 transition-all"
+                      width={28}
+                      height={28}
+                      loading="lazy"
+                    />
+                  </button>
                   {props.children}
-                  <div className="">
-                    <button
-                      aria-label="Close form"
-                      type="button"
-                      className="absolute top-2 right-2"
-                      onClick={() => setOpen(false)}
-                    >
-                      <CloseModal
-                        className="p-[6px] hover:opacity-90 rotate-0 hover:rotate-90 transition-all"
-                        width={28}
-                        height={28}
-                        loading="lazy"
-                      />
-                    </button>
-                  </div>
                 </Dialog.Panel>
               </Transition.Child>
             </div>
