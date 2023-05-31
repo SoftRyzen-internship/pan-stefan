@@ -80,3 +80,7 @@ body {
     margin: 0 auto;
   }
 }
+
+.hero-bg {
+  background-image: url('../../public/assets/images/hero/bg.png');
+}
