@@ -27,6 +27,11 @@ module.exports = {
         tanPearl: ['TAN-PEARL'],
       },
       container: {
+        screens: {
+          xs: '320px',
+          md: '768px',
+          xl: '1280px',
+        },
         padding: {
           DEFAULT: '32px',
           xs: '20px',

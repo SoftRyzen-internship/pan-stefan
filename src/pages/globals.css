@@ -88,3 +88,7 @@ body {
 .hero-bg {
   background-image: url('../../public/assets/images/hero/bg.png');
 }
+
+.about-us-bg {
+  background-image: url('../../public/assets/images/about-us/about-us-bg.png');
+}
