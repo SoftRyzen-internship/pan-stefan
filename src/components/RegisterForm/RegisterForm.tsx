@@ -3,12 +3,13 @@ import FormInput from '../FormInput/FormInput';
 import formField from './formFields';
 import Idata from './Idata';
 import fieldsParams from './fieldsParams';
-import sendToTlg from '@/pages/api/sendToTlg';
 import { useState } from 'react';
 import Button from '../Button/Button';
+import sendToTlg from '@/services/api/sendToTlg';
 
 function RegisterForm() {
   const [isSending, setIsSending] = useState(false);
+  const [isError, setIsError] = useState(false);
 
   const {
     formState: { errors },
@@ -26,20 +27,23 @@ function RegisterForm() {
 
   const onSubmitHandler = async (data: Idata) => {
     try {
-      fetch('/api/sendToTlg', {
-        method: 'post',
-        body: JSON.stringify(data),
-      });
+      sendToTlg(data, setIsError);
       setIsSending(true);
     } catch (error) {
-      console.log('oops');
+      console.log('oopsrofm');
     } finally {
       reset();
     }
   };
 
   return isSending ? (
-    <div>Notification</div>
+    <>
+      {isError ? (
+        <div className="text-red-800">ErrorNotification</div>
+      ) : (
+        <div className="text-purple-80">Notification</div>
+      )}
+    </>
   ) : (
     <div>
       <h2

@@ -16,6 +16,10 @@ const fieldsParams: {
   };
 } = {
   username: {
+    pattern: {
+      value: /[^\s]/,
+      message: '*Повинно містити символи',
+    },
     required: `*Це поле обов'язкове`,
     minLength: {
       value: 2,
@@ -44,6 +48,11 @@ const fieldsParams: {
   },
 
   comment: {
+    required: `*Це поле обов'язкове`,
+    pattern: {
+      value: /[^\s]/,
+      message: '*Повинно містити символи',
+    },
     minLength: {
       value: 2,
       message: 'Коментар має містити не менше 2 символів',
