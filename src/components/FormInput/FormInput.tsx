@@ -17,7 +17,9 @@ function FormInput(props: IFieldProps) {
           id={`formField${name}`}
           aria-label={label}
           placeholder={label}
-          className=" p-3 rounded-2xl mb-7 w-[100%] bg-lightWite text-black font-light border border-purple-80"
+          className={` p-3 rounded-2xl mb-7 w-[100%] bg-lightWite text-black font-light border border-purple-80 ${
+            errors[name] ? 'border-red-80 border border-style:solid aa' : 'purple-80 border'
+          }`}
         />
       ) : (
         <input

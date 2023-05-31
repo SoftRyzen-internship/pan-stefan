@@ -1,6 +1,6 @@
 import DropDown from '@/components/DropDown/DropDown';
 import Layout from '@/components/Layout/Layout';
-import RegisterForm from '@/components/RegisterForm/RegisterForm';
+import WorkForm from '@/components/WorkForm/WorkForm';
 export default function Home() {
   return (
     <Layout>
@@ -8,7 +8,7 @@ export default function Home() {
         <section className="section">
           <div className="container bg-slate-700 font-display font-bold">
             <DropDown>
-              <RegisterForm />
+              <WorkForm />
             </DropDown>
           </div>
         </section>
