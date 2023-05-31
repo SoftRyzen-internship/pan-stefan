@@ -1,8 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    './src/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
+  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
       screens: {
@@ -17,16 +15,16 @@ module.exports = {
         },
         purple: {
           30: '#9C89B3',
-          80: '#5C4083'
+          80: '#5C4083',
         },
         red: {
           80: '#EF4444'
         }
       },
       fontFamily: {
-        'display': ['Fixel Display'],
-        'cormorant': ['Cormorant Infant'],
-        'tanPearl': ['TAN-PEARL'],
+        display: ['Fixel Display'],
+        cormorant: ['Cormorant Infant'],
+        tanPearl: ['TAN-PEARL'],
       },
       container: {
         padding: {
@@ -35,9 +33,8 @@ module.exports = {
           md: '32px',
           xl: '32px',
         },
-
       },
     },
   },
   plugins: [],
-}
+};
