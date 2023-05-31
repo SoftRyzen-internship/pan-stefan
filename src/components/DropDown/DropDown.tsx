@@ -1,9 +1,13 @@
-import { Fragment, useRef, useState } from 'react';
+import { FC, Fragment, PropsWithChildren, useRef, useState, ReactNode } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
-
+import RegisterForm from '../RegisterForm/RegisterForm';
 import CloseModal from '../../../public/CloseModal.svg';
 
-function DropDown() {
+interface DropDownProps {
+  children: ReactNode;
+}
+
+function DropDown(props: DropDownProps) {
   const [open, setOpen] = useState(false);
 
   const cancelButtonRef = useRef(null);
@@ -45,7 +49,8 @@ function DropDown() {
                 leaveFrom="opacity-100 translate-y-0 sm:scale-100"
                 leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-90"
               >
-                <Dialog.Panel className="relative border border-purple-80 h-auto w-[463px] py-10 transform rounded-[20px] bg-lightWite transition-all">
+                <Dialog.Panel className="relative border border-purple-80 h-auto w-[463px] p-10 transform rounded-[20px] bg-lightWite transition-all">
+                  {props.children}
                   <div className="">
                     <button
                       aria-label="Close form"

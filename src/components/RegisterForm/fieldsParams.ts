@@ -1,8 +1,6 @@
 const fieldsParams: {
   [key: string]: {
-    required?: {
-      message: string;
-    };
+    required?: string;
     minLength?: {
       value: number;
       message: string;
@@ -18,7 +16,7 @@ const fieldsParams: {
   };
 } = {
   username: {
-    required: { message: `*Це поле обов'язкове` },
+    required: `*Це поле обов'язкове`,
     minLength: {
       value: 2,
       message: `Ім'я повинно містити не менше 2 символів`,
@@ -30,7 +28,7 @@ const fieldsParams: {
   },
 
   phone: {
-    required: { message: `*Це поле обов'язкове` },
+    required: `*Це поле обов'язкове`,
     pattern: {
       value: /^(\+380)\d{9}$/,
       message: '*Не вірний формат номеру',

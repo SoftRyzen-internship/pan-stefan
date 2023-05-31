@@ -5,6 +5,7 @@ import Idata from './Idata';
 import fieldsParams from './fieldsParams';
 import axios from 'axios';
 import { useState } from 'react';
+import Button from '../Button/Button';
 
 function RegisterForm() {
   const [isSending, setIsSending] = useState(false);
@@ -45,7 +46,12 @@ function RegisterForm() {
     <div>Notification</div>
   ) : (
     <div>
-      <p>Title</p>
+      <h2
+        className={`font-cormorant font-semibold text-center text-purple-80 mb-[32px] md:mb-[40px] xl:mb-[60px] text-[32px]/[39px] md:text-[40px]/[48px] xl:text-[48px]/[58px]`}
+      >
+        Зробити <br />
+        замовлення
+      </h2>
       <form
         onSubmit={handleSubmit(onSubmitHandler)}
         aria-label="Форма замовлення продукції"
@@ -60,8 +66,7 @@ function RegisterForm() {
             options={fieldsParams[field.name as keyof typeof fieldsParams]}
           />
         ))}
-
-        <button type="submit">submit</button>
+        <Button type="submit" text="Замовити" centered xwide></Button>
       </form>
     </div>
   );
