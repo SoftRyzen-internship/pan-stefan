@@ -13,7 +13,7 @@ function HeroSection() {
     const { logoText, buttonText, descriptionText, imageAltText } = heroTextContent;
     return (
         <section className="section pt-[60px] md:pt-[102px] md:pb-[100px] xl:pt-[60px] xl:pb-[65px] hero-bg bg-center">
-            <div className="container flex flex-col items-center md:flex-row md:justify-between xl:justify-start">
+            <div className="container flex flex-col items-center md:flex-row md:justify-between lg:justify-center lg:gap-x-[38px] xl:gap-x-0 xl:justify-start">
                 <div className="mb-[60px] md:mb-0 xl:mr-[134px]">
                     <SectionHeader text={logoText} hero />
                 <p className="max-w-[280px] md:max-w-[336px] xl:max-w-[488px] mb-[28px] md:mb-[40px] xl:mb-[57px] text-black text-[18px]/[28px] md:text-[20px]/[28px]">{descriptionText}</p>
