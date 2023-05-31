@@ -67,6 +67,10 @@ body {
   font-weight: 400;
 }
 
+*:focus {
+  outline: none;
+}
+
 @layer components {
   .section {
     padding: 40px 0;
