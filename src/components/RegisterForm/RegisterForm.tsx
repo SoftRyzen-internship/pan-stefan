@@ -1,11 +1,13 @@
 import { useForm } from 'react-hook-form';
+import { useState } from 'react';
+
 import FormInput from '../FormInput/FormInput';
 import formField from './formFields';
+import Button from '../Button/Button';
+
+import sendToTlg from '@/services/api/sendToTlg';
 import Idata from './Idata';
 import fieldsParams from './fieldsParams';
-import { useState } from 'react';
-import Button from '../Button/Button';
-import sendToTlg from '@/services/api/sendToTlg';
 
 function RegisterForm() {
   const [isSending, setIsSending] = useState(false);
@@ -30,7 +32,7 @@ function RegisterForm() {
       sendToTlg(data, setIsError);
       setIsSending(true);
     } catch (error) {
-      console.log('oopsrofm');
+      console.log(error);
     } finally {
       reset();
     }

@@ -1,14 +1,8 @@
 import { Fragment, ReactNode, useRef } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 
-import CloseModal from '../../../public/CloseModal.svg';
-import { SetStateAction } from 'react';
-
-interface DropDownProps {
-  children: ReactNode;
-  isOpen: boolean;
-  setIsOpen: SetStateAction<any>;
-}
+import CloseModal from '../../../public/assets/icon/CloseModal.svg';
+import DropDownProps from './IDropDown';
 
 function DropDown(props: DropDownProps) {
   const cancelButtonRef = useRef(null);
