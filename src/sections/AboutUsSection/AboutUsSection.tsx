@@ -1,13 +1,14 @@
-import Image from "next/image";
+import Image from 'next/image';
 
-import SectionHeader from "@/components/SectionHeader/SectionHeader";
+import SectionHeader from '@/components/SectionHeader/SectionHeader';
 
-import useBreakpoints from "@/hooks/useBreakpoints";
+import useBreakpoints from '@/services/hooks/useBreakpoints';
 
-import aboutUsSectionTextContent from "./aboutUs-section-text-content";
+import aboutUsSectionTextContent from './aboutUs-section-text-content';
 import mainImage from '../../../public/assets/images/about-us/main-image.jpg';
 
 function AboutUsSection() {
+
     const { headerText, descriptionText, imageAltText } = aboutUsSectionTextContent;
     const {less768px, bigger1280px} = useBreakpoints();
     return (
@@ -22,5 +23,6 @@ function AboutUsSection() {
         </section>
     );
  }
+
 
 export default AboutUsSection;

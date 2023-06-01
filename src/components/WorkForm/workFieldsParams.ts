@@ -17,6 +17,10 @@ const workFieldsParams: {
 } = {
   username: {
     required: `*Це поле обов'язкове`,
+    pattern: {
+      value: /[^\s]/,
+      message: '*Повинно містити символи',
+    },
     minLength: {
       value: 2,
       message: `Ім'я повинно містити не менше 2 символів`,
@@ -61,6 +65,10 @@ const workFieldsParams: {
 
   comment: {
     required: `*Це поле обов'язкове`,
+    pattern: {
+      value: /[^\s]/,
+      message: '*Повинно містити символи',
+    },
     minLength: {
       value: 2,
       message: '*Коментар має містити не менше 2 символів',
