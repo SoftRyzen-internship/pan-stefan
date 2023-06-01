@@ -9,9 +9,9 @@ import mainImage from '../../../public/assets/images/about-us/main-image.jpg';
 
 function AboutUsSection() {
     const { headerText, descriptionText, imageAltText } = aboutUsSectionTextContent;
-    const {less768px, bigger768px, bigger1280px} = useBreakpoints();
+    const {less768px, bigger1280px} = useBreakpoints();
     return (
-        <section className={`section relative bg-purple-30 md:py-[80px] xl:pb-[126px] ${less768px ? '' : (bigger1280px ? 'about-us-bg bg-no-repeat bg-[length:626px_319px] bg-[right_4px_bottom_5px]' : 'about-us-bg bg-no-repeat bg-[length:336px_171px] bg-[left_32px_bottom_1px]')}`}>
+        <section className={`section relative bg-purple-30 md:py-[80px] xl:pb-[126px] ${less768px ? '' : (bigger1280px ? 'about-us-bg bg-no-repeat bg-[length:626px_319px] bg-[right_calc(50%-315px)_bottom_5px]' : 'about-us-bg bg-no-repeat bg-[length:336px_171px] bg-[left_calc(50%-188px)_bottom_1px]')}`}>
             <div className="container">
                 <SectionHeader text={headerText} />
                 <div className="md:flex md:justify-between md:items-start xl:justify-start xl:gap-x-[32px]">
