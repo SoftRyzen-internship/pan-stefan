@@ -1,37 +1,34 @@
-import { Fragment, ReactNode, useRef, useState } from 'react';
+import { Fragment, ReactNode, useRef } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 
 import CloseModal from '../../../public/CloseModal.svg';
+import { SetStateAction } from 'react';
 
 interface DropDownProps {
   children: ReactNode;
+  isOpen: boolean;
+  setIsOpen: SetStateAction<any>;
 }
 
 function DropDown(props: DropDownProps) {
-  const [open, setOpen] = useState(false);
-
   const cancelButtonRef = useRef(null);
+  const { isOpen, setIsOpen, children } = props;
 
   return (
     <>
-      <div className="bg-gray-50 px-4 py-3 sm:flex sm:px-6">
-        <button
-          type="button"
-          className="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto"
-          onClick={() => setOpen(true)}
+      <Transition.Root show={isOpen} as={Fragment}>
+        <Dialog
+          as="div"
+          className="relative z-10"
+          initialFocus={cancelButtonRef}
+          onClose={setIsOpen}
         >
-          Openn
-        </button>
-      </div>
-
-      <Transition.Root show={open} as={Fragment}>
-        <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={setOpen}>
           <Transition.Child
             as={Fragment}
-            enter="ease-out duration-500"
+            enter="ease-out duration-1000"
             enterFrom="opacity-0"
             enterTo="opacity-100"
-            leave="ease-in duration-500"
+            leave="ease-in duration-1000"
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
@@ -54,7 +51,7 @@ function DropDown(props: DropDownProps) {
                     aria-label="Close form"
                     type="button"
                     className="absolute top-2 right-2"
-                    onClick={() => setOpen(false)}
+                    onClick={() => setIsOpen(false)}
                   >
                     <CloseModal
                       className="p-[6px] hover:opacity-90 rotate-0 hover:rotate-90 transition-all"
@@ -63,7 +60,7 @@ function DropDown(props: DropDownProps) {
                       loading="lazy"
                     />
                   </button>
-                  {props.children}
+                  {children}
                 </Dialog.Panel>
               </Transition.Child>
             </div>

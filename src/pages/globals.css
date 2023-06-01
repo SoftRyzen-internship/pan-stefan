@@ -92,3 +92,10 @@ body {
 .about-us-bg {
   background-image: url('../../public/assets/images/about-us/about-us-bg.png');
 }
+
+.vacancy-bg-1 {
+  background: url('../../public/assets/images/vacancy/vacancybg1.png');
+}
+.vacancy-bg-2 {
+  background: url('../../public/assets/images/vacancy/vacancybg2.png');
+}
