@@ -1,14 +1,24 @@
 import { FC, ReactNode } from 'react';
 import Head from 'next/head';
+import { useState } from 'react';
 
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
+import OrderButton from '../OrderButton/OrderButton';
+import DropDown from '../DropDown/DropDown';
+import RegisterForm from '../RegisterForm/RegisterForm';
 
 interface LayoutProps {
   children: ReactNode;
 }
 
 const Layout: FC<LayoutProps> = ({ children }) => {
+  const [open, setOpen] = useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
   return (
     <>
       <Head>
@@ -19,7 +29,12 @@ const Layout: FC<LayoutProps> = ({ children }) => {
       </Head>
       <Header />
       <main>{children}</main>
+      <OrderButton onClick={handleClick} />
       <Footer />
+
+      <DropDown isOpen={open} setIsOpen={setOpen}>
+        <RegisterForm />
+      </DropDown>
     </>
   );
 };
