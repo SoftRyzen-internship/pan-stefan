@@ -31,6 +31,7 @@ function VacancySection() {
 
   return (
     <section
+      id="Вакансії"
       className={`section overflow-hidden relative bg-purple-30 ${s.beforeBgStyle} ${s.afterBgStyle}`}
     >
       <div className={`container overflow-clip text-center md:text-xl xl:w-[864px] `}>

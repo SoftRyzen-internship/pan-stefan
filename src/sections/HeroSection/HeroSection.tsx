@@ -12,7 +12,10 @@ function HeroSection() {
   const { less768px, bigger1280px } = useBreakpoints();
   const { logoText, buttonText, descriptionText, imageAltText } = heroTextContent;
   return (
-    <section className="section pt-[60px] md:pt-[102px] md:pb-[100px] xl:pt-[60px] xl:pb-[65px] hero-bg bg-center">
+    <section
+      id="Головна"
+      className="section pt-[60px] md:pt-[102px] md:pb-[100px] xl:pt-[60px] xl:pb-[65px] hero-bg bg-center"
+    >
       <div className="container flex flex-col items-center md:flex-row md:justify-between xl:justify-start">
         <div className="mb-[60px] md:mb-0 xl:mr-[134px]">
           <SectionHeader text={logoText} hero />
