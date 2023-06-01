@@ -1,10 +1,11 @@
-import { useForm } from 'react-hook-form';
+import { SubmitHandler, useForm } from 'react-hook-form';
 import FormInput from '../FormInput/FormInput';
 import workFormFields from './workFormFields';
 import IWorkFormData from './IWorkFormData';
 import workFieldsParams from './workFieldsParams';
 import { useState } from 'react';
 import Button from '../Button/Button';
+import axios from 'axios';
 
 function WorkForm() {
   const [isSending, setIsSending] = useState(false);
@@ -23,10 +24,19 @@ function WorkForm() {
     mode: 'all',
   });
 
-  const onSubmitHandler = (data: IWorkFormData) => {
+  // const onSubmitHandler: SubmitHandler<IWorkFormData> = async (formData) => {
+  const onSubmitHandler = (formData: IWorkFormData) => {
     reset();
-    console.log(data);
     setIsSending(true);
+    axios.post('api/sendToGmail', formData).
+      then(({ data }) => {
+        setIsSending(false);
+        console.log(data.message);
+      })
+      .catch(err => {
+        setIsSending(false);
+        console.log(err.message);
+      });
   };
 
   return isSending ? (
