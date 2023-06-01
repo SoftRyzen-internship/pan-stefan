@@ -1,14 +1,17 @@
-import { SubmitHandler, useForm } from 'react-hook-form';
-import FormInput from '../FormInput/FormInput';
-import workFormFields from './workFormFields';
-import IWorkFormData from './IWorkFormData';
-import workFieldsParams from './workFieldsParams';
 import { useState } from 'react';
-import Button from '../Button/Button';
+import { useForm } from 'react-hook-form';
 import axios from 'axios';
 
+import FormInput from '../FormInput/FormInput';
+import Button from '../Button/Button';
+
+import workFormFields from './workFormFields';
+import workFieldsParams from './workFieldsParams';
+import { IWorkFormData, InitialFormState } from './WorkFormTypes';
+
 function WorkForm() {
-  const [isSending, setIsSending] = useState(false);
+  const [state, setState] = useState<InitialFormState>({ isSending: false, error: false, finalMessage: null });
+  const { isSending, error, finalMessage } = state;
 
   const {
     formState: { errors },
@@ -24,26 +27,20 @@ function WorkForm() {
     mode: 'all',
   });
 
-  // const onSubmitHandler: SubmitHandler<IWorkFormData> = async (formData) => {
   const onSubmitHandler = (formData: IWorkFormData) => {
     reset();
-    setIsSending(true);
+    setState(prevState => ({ ...prevState, isSending: true }));
     axios.post('api/sendToGmail', formData).
       then(({ data }) => {
-        setIsSending(false);
-        console.log(data.message);
+        setState(prevState => ({ ...prevState, isSending: false, finalMessage: data.message }));
       })
-      .catch(err => {
-        setIsSending(false);
-        console.log(err.message);
+      .catch(error => {
+        setState(prevState => ({ ...prevState, error: true, isSending: false, finalMessage: error.message }));
       });
   };
 
-  return isSending ? (
-    <div>Notification</div>
-  ) : (
-    // Тут буде нотифікація
-    <div>
+  return !error && !finalMessage ? (
+    <div className='relative'>
       <h2
         className={`font-cormorant font-semibold text-center text-purple-80 mb-[32px] md:mb-[40px] xl:mb-[60px] text-[32px]/[39px] md:text-[40px]/[48px] xl:text-[48px]/[58px]`}
       >
@@ -65,9 +62,10 @@ function WorkForm() {
           />
         ))}
         <Button type="submit" text="Відправити" centered xwide></Button>
-      </form>
-    </div>
-  );
+    </form>
+    {isSending && <p className='absolute top-[50%] left-[50%] text-[70px] translate-x-[-50%] translate-y-[-50%] text-red-600'>spinner...</p>}
+  </div>
+  ) : (<p className={`${error ? 'text-red-600' : 'text-green-600'}`}>{finalMessage}</p>);
 }
 
 export default WorkForm;

@@ -1,10 +1,9 @@
 import nodemailer from 'nodemailer';
 
 import type { NextApiResponse } from 'next';
-import IWorkFormData from '@/components/WorkForm/IWorkFormData';
+import {IWorkFormData} from '../../components/WorkForm/WorkFormTypes';
 
 export default async function (req: { body: IWorkFormData }, res: NextApiResponse) {
-  // const data = JSON.parse(req.body);
   const transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
     port: 465,
@@ -22,9 +21,9 @@ export default async function (req: { body: IWorkFormData }, res: NextApiRespons
   };
   transporter.sendMail(mail, function (error, info) {
     if (error) {
-      return res.status(404).json(error.message);
+      res.status(404).json(error.message);
     } 
-    return res.status(200).json({ message: 'Дякуємо за замовлення. Незабаром наш менеджер звʼяжеться з вами' });
+    res.status(200).json({ message: 'Дякуємо за замовлення. Незабаром наш менеджер звʼяжеться з вами' });
   });
   
 
