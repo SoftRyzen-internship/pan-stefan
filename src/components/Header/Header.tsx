@@ -1,6 +1,5 @@
 import { Dialog, Disclosure } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-// import HeaderComponent from './HeaderComponent';
 import { useState } from 'react';
 
 import Image from 'next/image';
@@ -72,41 +71,54 @@ function Header() {
                             setMobileMenuOpen(true);
                           }
                         }}
-                        className="inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                        className="inline-flex items-center justify-center p-2 text-purple-80 hover:text-purple-30"
                       >
                         <span className="sr-only">Open main menu</span>
                         {mobileMenuOpen ? (
-                          <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
+                          <XMarkIcon
+                            width={16}
+                            hanging={16}
+                            className="block h-8 w-8 md:h-10 md:w-10"
+                            aria-hidden="true"
+                          />
                         ) : (
-                          <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
+                          <Bars3Icon
+                            width={24}
+                            hanging={16}
+                            className="block h-8 w-8 md:h-10 md:w-10"
+                            aria-hidden="true"
+                          />
                         )}
                       </Disclosure.Button>
                     </div>
                   </div>
                 </div>
                 <Disclosure.Panel
-                  className={`absolute xl:hidden bg-lightWite left-0 top-full z-10 mt-[1px] w-screen ${
+                  className={`pb-[41px] pt-[60px] md:py-[100px] absolute hero-bg bg-center xl:hidden bg-lightWite left-0 top-full z-10 mt-[1px] w-screen ${
                     mobileMenuOpen ? '' : 'hidden'
                   }`}
                 >
-                  <div className="space-y-7 mt-28 mb-32 md:pl-8">
-                    {navigation.map(item => (
-                      <Disclosure.Button
-                        key={item.name}
-                        as="a"
-                        onClick={handleClick}
-                        data-scroll-to={item.href}
-                        className="text-black hover:text-purple-80 block font-cormorant leading-8 text-[28px] font-[600] cursor-pointer"
-                      >
-                        {item.name}
-                      </Disclosure.Button>
-                    ))}
+                  <div className="md:px-8 flex flex-col items-center md:flex-row md:flex md:justify-between">
+                    <div className="space-y-5 md:space-y-7 flex flex-col items-center md:items-start md:justify-center mb-[60px] ">
+                      {navigation.map(item => (
+                        <Disclosure.Button
+                          key={item.name}
+                          as="a"
+                          onClick={handleClick}
+                          data-scroll-to={item.href}
+                          className="text-black hover:text-purple-80 block font-cormorant text-[20px]/[28px] md:text-[28px]/[32px] font-[600] cursor-pointer"
+                        >
+                          {item.name}
+                        </Disclosure.Button>
+                      ))}
+                    </div>
+
                     <div>
                       <Image
                         src={mainImage}
                         alt="Святковий пиріг зі свечами"
-                        width={less768px ? 280 : bigger1280px ? 488 : 330}
-                        height={less768px ? 307 : bigger1280px ? 543 : 368}
+                        width={less768px ? 280 : 336}
+                        height={less768px ? 307 : 368}
                       />
                     </div>
                   </div>
