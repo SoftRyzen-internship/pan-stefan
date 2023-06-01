@@ -9,7 +9,6 @@ import useBreakpoints from '@/services/hooks/useBreakpoints';
 
 import vacancySectionTextContent from './vacancy-section-text-content';
 import afterStyle from './vacancy-after-style';
-import mainImage from '../../../public/assets/images/about-us/main-image.jpg';
 
 function VacancySection() {
   const {
