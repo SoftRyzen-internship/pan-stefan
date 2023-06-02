@@ -6,7 +6,7 @@ import nodemailerConfig from './helpers/nodemailerConfig';
 import type { NextApiResponse } from 'next';
 import { IWorkFormData } from '../../components/WorkForm/WorkFormTypes';
 
-export default async function (req: { body: IWorkFormData }, res: NextApiResponse) {
+export default async function sendToGmail(req: { body: IWorkFormData }, res: NextApiResponse) {
   const transporter = nodemailer.createTransport(nodemailerConfig);
   const mail = createMail(process.env.NEXT_PUBLIC_GMAIL_MAILOWNER, req.body);
 
