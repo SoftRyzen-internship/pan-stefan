@@ -1,5 +1,5 @@
 import { Dialog, Disclosure } from '@headlessui/react';
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import { XMarkIcon, Bars3BottomLeftIcon } from '@heroicons/react/24/outline';
 import { useState } from 'react';
 
 import Image from 'next/image';
@@ -17,7 +17,7 @@ const navigation = [
 
 function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { less768px, bigger1280px } = useBreakpoints();
+  const { less768px } = useBreakpoints();
 
   const handleClick = (event: any) => {
     const target = event.target;
@@ -82,7 +82,7 @@ function Header() {
                             aria-hidden="true"
                           />
                         ) : (
-                          <Bars3Icon
+                          <Bars3BottomLeftIcon
                             width={24}
                             hanging={16}
                             className="block h-8 w-8 md:h-10 md:w-10"
