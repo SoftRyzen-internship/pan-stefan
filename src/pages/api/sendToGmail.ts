@@ -16,6 +16,6 @@ export default async function sendToGmail(req: { body: IWorkFormData }, res: Nex
     }
     return res
       .status(200)
-      .json({ message: 'Дякуємо за замовлення. Незабаром наш менеджер звʼяжеться з вами' });
+      .json({ message: 'За наявності вакансії вам зателефонують' });
   });
 }
