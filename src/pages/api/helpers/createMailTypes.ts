@@ -1,1 +1,1 @@
-export type MailOwner = string;
+export type MailOwner = string | undefined;

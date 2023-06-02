@@ -8,7 +8,7 @@ import { IWorkFormData } from '../../components/WorkForm/WorkFormTypes';
 
 export default async function (req: { body: IWorkFormData }, res: NextApiResponse) {
   const transporter = nodemailer.createTransport(nodemailerConfig);
-  const mail = createMail('kievdrum1983@gmail.com', req.body);
+  const mail = createMail(process.env.NEXT_PUBLIC_GMAIL_MAILOWNER, req.body);
 
   transporter.sendMail(mail, function (error) {
     if (error) {
