@@ -1,7 +1,8 @@
 export interface IWorkFormData {
-  comment: string;
-  phone: string;
   username: string;
+  phone: string;
+  age: string,
+  comment: string;
 };
 
 export interface InitialFormState  {

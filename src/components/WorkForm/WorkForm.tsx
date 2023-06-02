@@ -22,17 +22,18 @@ function WorkForm() {
     defaultValues: {
       username: '',
       phone: '',
+      age: '',
       comment: '',
     },
     mode: 'all',
   });
 
   const onSubmitHandler = (formData: IWorkFormData) => {
-    reset();
     setState(prevState => ({ ...prevState, isSending: true }));
     axios.post('api/sendToGmail', formData).
-      then(({ data }) => {
-        setState(prevState => ({ ...prevState, isSending: false, finalMessage: data.message }));
+    then(({ data }) => {
+      setState(prevState => ({ ...prevState, isSending: false, finalMessage: data.message }));
+      reset();
       })
       .catch(error => {
         setState(prevState => ({ ...prevState, error: true, isSending: false, finalMessage: error.message }));
