@@ -7,8 +7,8 @@ import Image from 'next/image';
 import NextIcon from '../../../public/assets/icon/Right.svg';
 import PrevIcon from '../../../public/assets/icon/Left.svg';
 
-import css from './Slider.module.css';
 import useBreakpoints from '@/services/hooks/useBreakpoints';
+import css from './Slider.module.css';
 
 const images = [
   { id: '1', src: '/assets/images/slider/photo1.jpg', name: 'cake' },

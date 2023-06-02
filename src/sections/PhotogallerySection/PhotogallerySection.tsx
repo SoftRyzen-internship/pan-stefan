@@ -1,15 +1,16 @@
 import Slider from '@/components/Slider/Slider';
-
-import useBreakpoints from '../../services/hooks/useBreakpoints';
+import SectionHeader from '@/components/SectionHeader/SectionHeader';
+import photogallarySectionTextContent from './vacancy-section-text-content';
 
 function Photogallery() {
+  const { headerText } = photogallarySectionTextContent;
   return (
-    <section
-      id="Фотогалерея"
-      className="section pt-[60px] md:pt-[102px] md:pb-[100px] xl:pt-[60px] xl:pb-[65px]"
-    >
+    <section id="Фотогалерея" className="section">
       <div className="container">
-        <Slider></Slider>
+        <div className="text-center">
+          <SectionHeader text={headerText} colored />
+        </div>
+        <Slider />
       </div>
     </section>
   );
