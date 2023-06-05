@@ -4,6 +4,7 @@ import axios from 'axios';
 
 import FormInput from '../FormInput/FormInput';
 import Button from '../Button/Button';
+import FormNotification from '../FormNotification/FormNotification';
 
 import workFormFields from './workFormFields';
 import workFieldsParams from './workFieldsParams';
@@ -36,7 +37,7 @@ function WorkForm() {
       reset();
       })
       .catch(error => {
-        setState(prevState => ({ ...prevState, error: true, isSending: false, finalMessage: error.message }));
+        setState(prevState => ({ ...prevState, error: true, isSending: false, finalMessage: 'Щось пішло не так' }));
       });
   };
 
@@ -66,7 +67,7 @@ function WorkForm() {
     </form>
     {isSending && <p className='absolute top-[50%] left-[50%] text-[70px] translate-x-[-50%] translate-y-[-50%] text-red-600'>spinner...</p>}
   </div>
-  ) : (<p className={`${error ? 'text-red-600' : 'text-green-600'}`}>{finalMessage}</p>);
+    ) : (error ? <FormNotification forError subText={finalMessage} /> : <FormNotification subText={finalMessage}/>);
 }
 
 export default WorkForm;
