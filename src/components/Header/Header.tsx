@@ -1,23 +1,23 @@
 import { Dialog, Disclosure } from '@headlessui/react';
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import { useState } from 'react';
+import { XMarkIcon, Bars3BottomLeftIcon } from '@heroicons/react/24/outline';
+import { useEffect, useRef, useState } from 'react';
 
 import Image from 'next/image';
 import useBreakpoints from '../../services/hooks/useBreakpoints';
 import mainImage from '../../../public/assets/images/hero/main-image.png';
 
 const navigation = [
-  { name: 'Головна', href: 'Головна', id: 1 },
-  { name: 'Про нас', href: 'Пронас', id: 2 },
+  { name: 'Головна', href: 'hero', id: 1 },
+  { name: 'Про нас', href: 'aboutUs', id: 2 },
   { name: 'Продукція', href: 'Продукція', id: 3 },
-  { name: 'Вакансії', href: 'Вакансії', id: 4 },
+  { name: 'Вакансії', href: 'vacancy', id: 4 },
   { name: 'Фотогалерея', href: 'Фотогалерея', id: 5 },
-  { name: 'Контакти', href: 'Контакти', id: 6 },
+  { name: 'Контакти', href: 'contact', id: 6 },
 ];
 
 function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { less768px, bigger1280px } = useBreakpoints();
+  const { less768px } = useBreakpoints();
 
   const handleClick = (event: any) => {
     const target = event.target;
@@ -74,7 +74,7 @@ function Header() {
                         className="inline-flex items-center justify-center p-2 text-purple-80 hover:text-purple-30"
                       >
                         <span className="sr-only">Open main menu</span>
-                        {mobileMenuOpen ? (
+                        {open ? (
                           <XMarkIcon
                             width={16}
                             hanging={16}
@@ -82,7 +82,7 @@ function Header() {
                             aria-hidden="true"
                           />
                         ) : (
-                          <Bars3Icon
+                          <Bars3BottomLeftIcon
                             width={24}
                             hanging={16}
                             className="block h-8 w-8 md:h-10 md:w-10"
@@ -95,7 +95,7 @@ function Header() {
                 </div>
                 <Disclosure.Panel
                   className={`pb-[41px] pt-[60px] md:py-[100px] absolute hero-bg bg-center xl:hidden bg-lightWite left-0 top-full z-10 mt-[1px] w-screen ${
-                    mobileMenuOpen ? '' : 'hidden'
+                    open ? '' : 'hidden'
                   }`}
                 >
                   <div className="md:px-8 flex flex-col items-center md:flex-row md:flex md:justify-between">
@@ -104,13 +104,32 @@ function Header() {
                         <Disclosure.Button
                           key={item.name}
                           as="a"
-                          onClick={handleClick}
+                          onClick={async e => {
+                            await handleClick(e);
+                            if (open) {
+                              setMobileMenuOpen(false);
+                              setTimeout(() => {
+                                close();
+                              }, 1000);
+                            } else {
+                              setMobileMenuOpen(true);
+                            }
+                          }}
                           data-scroll-to={item.href}
                           className="text-black hover:text-purple-80 block font-cormorant text-[20px]/[28px] md:text-[28px]/[32px] font-[600] cursor-pointer"
                         >
                           {item.name}
                         </Disclosure.Button>
                       ))}
+                      <Disclosure.Panel>
+                        {({ close }) => (
+                          <button
+                            onClick={async () => {
+                              close();
+                            }}
+                          ></button>
+                        )}
+                      </Disclosure.Panel>
                     </div>
 
                     <div>
