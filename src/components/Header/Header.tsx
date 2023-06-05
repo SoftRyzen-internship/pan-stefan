@@ -1,6 +1,6 @@
 import { Dialog, Disclosure } from '@headlessui/react';
 import { XMarkIcon, Bars3BottomLeftIcon } from '@heroicons/react/24/outline';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import Image from 'next/image';
 import useBreakpoints from '../../services/hooks/useBreakpoints';
@@ -74,7 +74,7 @@ function Header() {
                         className="inline-flex items-center justify-center p-2 text-purple-80 hover:text-purple-30"
                       >
                         <span className="sr-only">Open main menu</span>
-                        {mobileMenuOpen ? (
+                        {open ? (
                           <XMarkIcon
                             width={16}
                             hanging={16}
@@ -95,7 +95,7 @@ function Header() {
                 </div>
                 <Disclosure.Panel
                   className={`pb-[41px] pt-[60px] md:py-[100px] absolute hero-bg bg-center xl:hidden bg-lightWite left-0 top-full z-10 mt-[1px] w-screen ${
-                    mobileMenuOpen ? '' : 'hidden'
+                    open ? '' : 'hidden'
                   }`}
                 >
                   <div className="md:px-8 flex flex-col items-center md:flex-row md:flex md:justify-between">
@@ -104,13 +104,32 @@ function Header() {
                         <Disclosure.Button
                           key={item.name}
                           as="a"
-                          onClick={handleClick}
+                          onClick={async e => {
+                            await handleClick(e);
+                            if (open) {
+                              setMobileMenuOpen(false);
+                              setTimeout(() => {
+                                close();
+                              }, 1000);
+                            } else {
+                              setMobileMenuOpen(true);
+                            }
+                          }}
                           data-scroll-to={item.href}
                           className="text-black hover:text-purple-80 block font-cormorant text-[20px]/[28px] md:text-[28px]/[32px] font-[600] cursor-pointer"
                         >
                           {item.name}
                         </Disclosure.Button>
                       ))}
+                      <Disclosure.Panel>
+                        {({ close }) => (
+                          <button
+                            onClick={async () => {
+                              close();
+                            }}
+                          ></button>
+                        )}
+                      </Disclosure.Panel>
                     </div>
 
                     <div>
