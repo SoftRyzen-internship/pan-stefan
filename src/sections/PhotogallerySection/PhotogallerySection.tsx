@@ -2,7 +2,7 @@ import Slider from 'components/Slider/Slider';
 import SectionHeader from 'components/SectionHeader/SectionHeader';
 import photoGallarySectionTextContent from './gallery-section-text-content';
 
-function PhotoGallery() {
+function PhotoGallerySection() {
   const { headerText } = photoGallarySectionTextContent;
   return (
     <section id="gallery" className="section">
@@ -16,4 +16,4 @@ function PhotoGallery() {
   );
 }
 
-export default PhotoGallery;
+export default PhotoGallerySection;
