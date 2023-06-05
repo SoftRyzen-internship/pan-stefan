@@ -96,30 +96,31 @@ function Header() {
               >
                 {({ open, close }) => (
                   <div className="md:px-8 flex flex-col items-center md:flex-row md:flex md:justify-between">
-                    <div className="space-y-5 md:space-y-7 flex flex-col items-center md:items-start md:justify-center mb-[60px] ">
+                    <ul className="space-y-5 md:space-y-7 flex flex-col items-center md:items-start md:justify-center mb-[60px] ">
                       {navigation.map(item => (
-                        <Disclosure.Button
-                          key={item.name}
-                          as="a"
-                          onClick={async e => {
-                            await handleClick(e);
-                            if (open) {
-                              setMobileMenuOpen(false);
-                              setTimeout(() => {
-                                close(ref);
-                              }, 0);
-                            } else {
-                              setMobileMenuOpen(true);
-                            }
-                          }}
-                          data-scroll-to={item.href}
-                          className="text-black hover:text-purple-80 block font-cormorant text-[20px]/[28px] md:text-[28px]/[32px] font-[600] cursor-pointer"
-                        >
-                          {item.name}
-                        </Disclosure.Button>
+                        <li key={item.id}>
+                          <Disclosure.Button
+                            key={item.name}
+                            as="a"
+                            onClick={async e => {
+                              await handleClick(e);
+                              if (open) {
+                                setMobileMenuOpen(false);
+                                setTimeout(() => {
+                                  close(ref);
+                                }, 0);
+                              } else {
+                                setMobileMenuOpen(true);
+                              }
+                            }}
+                            data-scroll-to={item.href}
+                            className="text-black hover:text-purple-80 block font-cormorant text-[20px]/[28px] md:text-[28px]/[32px] font-[600] cursor-pointer"
+                          >
+                            {item.name}
+                          </Disclosure.Button>
+                        </li>
                       ))}
-                    </div>
-
+                    </ul>
                     <div>
                       <Image
                         src={mainImage}
