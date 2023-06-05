@@ -4,7 +4,7 @@ interface IProduct {
     id: number;
     category: string;
     productDescription: string;
-    imageSrc: string;
+    src: string;
   };
 }
 

@@ -1,25 +1,21 @@
-import Image from 'next/image';
-
 import SectionHeader from '@/components/SectionHeader/SectionHeader';
 import Button from '@/components/Button/Button';
 import ProductCard from '@/components/ProductCard/ProductCard';
 
-import useBreakpoints from '../../services/hooks/useBreakpoints';
-import heroTextContent from './product-text-content';
+import productTextContent from './product-text-content';
 
 function ProductSection() {
-  const { less768px, bigger1280px } = useBreakpoints();
-  const { titleText, buttonText, products } = heroTextContent;
+  const { titleText, buttonText, products } = productTextContent;
   return (
     <section id="productSection" className="section hero-bg bg-center">
-      <div className="container flex flex-col items-center md:flex-row md:justify-between xl:justify-start">
-        <div className="mb-[60px] md:mb-0 xl:mr-[134px]">
-          <SectionHeader text={titleText} colored centered />
+      <div className="container ">
+        <SectionHeader text={titleText} colored centered />
+        <ul className="mt-[68px] mb-[32px] md:mt-[80px] md:mb-[60px] flex flex-wrap items-center md:justify-center gap-x-8 xl:gap-x-8 gap-y-[72px] xl:gap-y-[80px]">
           {products.map(product => {
             return <ProductCard key={product.id} product={product} />;
           })}
-          <Button type="button" text={buttonText} link={{ target: '' }} centered />
-        </div>
+        </ul>
+        <Button type="button" text={buttonText} link={{ target: '' }} centered />
       </div>
     </section>
   );
