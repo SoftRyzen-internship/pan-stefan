@@ -1,37 +1,32 @@
 import { Dialog, Disclosure } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { useState } from 'react';
+import { Link, scroller } from 'react-scroll';
 
 import Image from 'next/image';
 import useBreakpoints from '../../services/hooks/useBreakpoints';
 import mainImage from '../../../public/assets/images/hero/main-image.png';
 
 const navigation = [
-  { name: 'Головна', href: 'Головна', id: 1 },
-  { name: 'Про нас', href: 'Пронас', id: 2 },
-  { name: 'Продукція', href: 'Продукція', id: 3 },
-  { name: 'Вакансії', href: 'Вакансії', id: 4 },
-  { name: 'Фотогалерея', href: 'Фотогалерея', id: 5 },
-  { name: 'Контакти', href: 'Контакти', id: 6 },
+  { name: 'Головна', href: 'main', id: 1 },
+  { name: 'Про нас', href: 'aboutUs', id: 2 },
+  { name: 'Продукція', href: 'products', id: 3 },
+  { name: 'Вакансії', href: 'vacancy', id: 4 },
+  { name: 'Фотогалерея', href: 'gallery', id: 5 },
+  { name: 'Контакти', href: 'contacts', id: 6 },
 ];
+
 
 function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { less768px, bigger1280px } = useBreakpoints();
+  const { less768px } = useBreakpoints();
 
-  const handleClick = (event: any) => {
-    const target = event.target;
-    const scrollTo = target.getAttribute('data-scroll-to');
-
-    if (scrollTo) {
-      event.preventDefault();
-      const element = document.getElementById(scrollTo);
-
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-        setMobileMenuOpen(false);
-      }
-    }
+  const handleClick = (element: string) => {
+    setMobileMenuOpen(false);
+    scroller.scrollTo(element, {
+      duration: 500,
+      smooth: true,
+    });
   };
 
   return (
@@ -39,7 +34,7 @@ function Header() {
       <header className="">
         <div className="border-b border-[#CBB389]">
           <Disclosure as="nav" className="relative px-5 md:px-8 xl:px-8">
-            {({ open, close }) => (
+            {({ open }) => (
               <>
                 <div className=" ">
                   <div className="flex items-center justify-between h-[100px]">
@@ -48,14 +43,12 @@ function Header() {
                       <div className="hidden xl:block">
                         <div className="ml-[123px] flex items-baseline space-x-[60px]">
                           {navigation.map(item => (
-                            <a
-                              onClick={handleClick}
+                            <Link to={item.href} smooth={true} duration={500}
                               key={item.name}
-                              data-scroll-to={item.href}
                               className="text-black leading-7 hover:text-purple-80 py-2 cursor-pointer"
                             >
                               {item.name}
-                            </a>
+                            </Link>
                           ))}
                         </div>
                       </div>
@@ -101,15 +94,13 @@ function Header() {
                   <div className="md:px-8 flex flex-col items-center md:flex-row md:flex md:justify-between">
                     <div className="space-y-5 md:space-y-7 flex flex-col items-center md:items-start md:justify-center mb-[60px] ">
                       {navigation.map(item => (
-                        <Disclosure.Button
+                        <Link to={item.href}
+                          onClick={() => handleClick(item.href)}
                           key={item.name}
-                          as="a"
-                          onClick={handleClick}
-                          data-scroll-to={item.href}
                           className="text-black hover:text-purple-80 block font-cormorant text-[20px]/[28px] md:text-[28px]/[32px] font-[600] cursor-pointer"
                         >
                           {item.name}
-                        </Disclosure.Button>
+                        </Link>
                       ))}
                     </div>
 
