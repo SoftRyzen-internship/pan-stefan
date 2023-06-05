@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Element } from 'react-scroll';
 
 import SectionHeader from '@/components/SectionHeader/SectionHeader';
 import Button from '@/components/Button/Button';
@@ -35,7 +36,9 @@ function VacancySection() {
       className={`section overflow-hidden relative bg-purple-30 ${s.beforeBgStyle} ${s.afterBgStyle}`}
     >
       <div className={`container overflow-clip text-center md:text-xl xl:w-[864px] `}>
-        <SectionHeader text={headerText} />
+        <Element name='vacancy'>
+          <SectionHeader text={headerText} />
+          </Element>
         <div
           className={`flex flex-col justify-center relative ${s.afterStyle} bg-white text-black rounded-[400px] py-[80px] px-[31px] mb-9 md:py-[48px] `}
         >
