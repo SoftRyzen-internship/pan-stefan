@@ -1,6 +1,6 @@
-import { Dialog, Disclosure } from '@headlessui/react';
+import { Disclosure } from '@headlessui/react';
 import { XMarkIcon, Bars3BottomLeftIcon } from '@heroicons/react/24/outline';
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import { Link, scroller } from 'react-scroll';
 
 import Image from 'next/image';
@@ -12,27 +12,20 @@ import navigation from './navigation';
 function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { less768px } = useBreakpoints();
-  const ref = useRef<HTMLElement | null>(null);
 
-  const handleClick = (event: React.SyntheticEvent<HTMLAnchorElement>) => {
-    const target = event.target as HTMLAnchorElement;
-    const scrollTo = target.getAttribute('data-scroll-to');
-
-    if (scrollTo) {
-      event.preventDefault();
-      const element = document.getElementById(scrollTo);
-
-      if (element) {
-        ref.current = element;
-        element.scrollIntoView({ behavior: 'smooth' });
-        setMobileMenuOpen(false);
-      }
+  const handleClick = (element: string) => {
+    if (element) {
+      setMobileMenuOpen(false);
+      scroller.scrollTo(element, {
+        duration: 500,
+        smooth: true,
+      });
     }
   };
 
   return (
     <header className="">
-      <div className="border-b border-[#CBB389]">
+      <div className="border-b border-lightBrown-30">
         <Disclosure as="nav" className="relative px-5 md:px-8 xl:px-8">
           {({ open }) => (
             <>
@@ -44,13 +37,15 @@ function Header() {
                       <ul className="ml-[123px] flex items-baseline space-x-[60px]">
                         {navigation.map(item => (
                           <li key={item.id}>
-                            <a
-                              onClick={handleClick}
+                            <Link
+                              to={item.href}
+                              smooth={true}
+                              duration={500}
                               key={item.name}
                               className="text-black leading-7 hover:text-purple-80 py-2 cursor-pointer"
                             >
                               {item.name}
-                            </a>
+                            </Link>
                           </li>
                         ))}
                       </ul>
@@ -99,25 +94,24 @@ function Header() {
                     <ul className="space-y-5 md:space-y-7 flex flex-col items-center md:items-start md:justify-center mb-[60px] ">
                       {navigation.map(item => (
                         <li key={item.id}>
-                          <Disclosure.Button
+                          <Link
                             key={item.name}
-                            as="a"
-                            onClick={async e => {
-                              await handleClick(e);
+                            to={item.href}
+                            onClick={() => {
+                              handleClick(item.href);
                               if (open) {
                                 setMobileMenuOpen(false);
                                 setTimeout(() => {
-                                  close(ref);
+                                  close();
                                 }, 0);
                               } else {
                                 setMobileMenuOpen(true);
                               }
                             }}
-                            data-scroll-to={item.href}
                             className="text-black hover:text-purple-80 block font-cormorant text-[20px]/[28px] md:text-[28px]/[32px] font-[600] cursor-pointer"
                           >
                             {item.name}
-                          </Disclosure.Button>
+                          </Link>
                         </li>
                       ))}
                     </ul>

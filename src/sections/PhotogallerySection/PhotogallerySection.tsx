@@ -5,7 +5,7 @@ import photogallarySectionTextContent from './vacancy-section-text-content';
 function Photogallery() {
   const { headerText } = photogallarySectionTextContent;
   return (
-    <section id="Фотогалерея" className="section">
+    <section id="gallery" className="section">
       <div className="container">
         <div className="text-center">
           <SectionHeader text={headerText} colored />
