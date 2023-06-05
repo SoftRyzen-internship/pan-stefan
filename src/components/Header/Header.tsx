@@ -4,9 +4,9 @@ import { useState } from 'react';
 import { Link, scroller } from 'react-scroll';
 
 import Image from 'next/image';
-import useBreakpoints from '../../services/hooks/useBreakpoints';
-import mainImage from '../../../public/assets/images/hero/main-image.png';
-import CompanyLogo from '../Logo/Logo';
+import useBreakpoints from 'services/hooks/useBreakpoints';
+import mainImage from '@/public/assets/images/hero/main-image.png';
+import CompanyLogo from 'components/Logo/Logo';
 import navigation from './navigation';
 
 function Header() {
@@ -42,7 +42,7 @@ function Header() {
                               smooth={true}
                               duration={500}
                               key={item.name}
-                              className="text-black leading-7 hover:text-purple-80 py-2 cursor-pointer"
+                              className="text-black leading-7 hover:text-purple-80 focus:text-purple-80 py-2 cursor-pointer"
                             >
                               {item.name}
                             </Link>
@@ -62,7 +62,7 @@ function Header() {
                           setMobileMenuOpen(true);
                         }
                       }}
-                      className="inline-flex items-center justify-center p-2 text-purple-80 hover:text-purple-30"
+                      className="inline-flex items-center justify-center p-2 text-purple-80 hover:text-purple-30 focus:text-purple-30"
                     >
                       <span className="sr-only">Open main menu</span>
                       {open ? (
@@ -108,7 +108,7 @@ function Header() {
                                 setMobileMenuOpen(true);
                               }
                             }}
-                            className="text-black hover:text-purple-80 block font-cormorant text-[20px]/[28px] md:text-[28px]/[32px] font-[600] cursor-pointer"
+                            className="text-black hover:text-purple-80 focus:text-purple-80 block font-cormorant text-[20px]/[28px] md:text-[28px]/[32px] font-[600] cursor-pointer"
                           >
                             {item.name}
                           </Link>
