@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import useBreakpoints from '../../services/hooks/useBreakpoints';
 import mainImage from '../../../public/assets/images/hero/main-image.png';
+import CompanyLogo from '../Logo/Logo';
 
 const navigation = [
   { name: 'Головна', href: 'hero', id: 1 },
@@ -44,7 +45,7 @@ function Header() {
                 <div className=" ">
                   <div className="flex items-center justify-between h-[100px]">
                     <div className="flex items-center">
-                      <div className="text-blue-500">LOGO</div>
+                      <CompanyLogo />
                       <div className="hidden xl:block">
                         <div className="ml-[123px] flex items-baseline space-x-[60px]">
                           {navigation.map(item => (
