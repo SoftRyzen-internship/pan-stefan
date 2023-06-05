@@ -11,12 +11,11 @@ const sendToTlg = async (formData: Idata) => {
       <b> Комментар: ${formData.comment}</b>
     `;
 
-  const { data } = await axios
-    .post(URI_API, {
-      chat_id: chat_id,
-      parse_mode: 'html',
-      text: message,
-    });
+  const { data } = await axios.post(URI_API, {
+    chat_id: chat_id,
+    parse_mode: 'html',
+    text: message,
+  });
   return data;
 };
 
