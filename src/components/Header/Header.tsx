@@ -3,8 +3,8 @@ import { XMarkIcon, Bars3BottomLeftIcon } from '@heroicons/react/24/outline';
 import { useEffect, useRef, useState } from 'react';
 
 import Image from 'next/image';
-import useBreakpoints from '../../services/hooks/useBreakpoints';
-import mainImage from '../../../public/assets/images/hero/main-image.png';
+import useBreakpoints from 'services/hooks/useBreakpoints';
+import mainImage from '@/public/assets/images/hero/main-image.png';
 
 const navigation = [
   { name: 'Головна', href: 'hero', id: 1 },
@@ -52,7 +52,7 @@ function Header() {
                               onClick={handleClick}
                               key={item.name}
                               data-scroll-to={item.href}
-                              className="text-black leading-7 hover:text-purple-80 py-2 cursor-pointer"
+                              className="text-black leading-7 hover:text-purple-80 focus:text-purple-80 py-2 cursor-pointer"
                             >
                               {item.name}
                             </a>
@@ -71,7 +71,7 @@ function Header() {
                             setMobileMenuOpen(true);
                           }
                         }}
-                        className="inline-flex items-center justify-center p-2 text-purple-80 hover:text-purple-30"
+                        className="inline-flex items-center justify-center p-2 text-purple-80 hover:text-purple-30 focus:text-purple-30"
                       >
                         <span className="sr-only">Open main menu</span>
                         {open ? (
@@ -116,7 +116,7 @@ function Header() {
                             }
                           }}
                           data-scroll-to={item.href}
-                          className="text-black hover:text-purple-80 block font-cormorant text-[20px]/[28px] md:text-[28px]/[32px] font-[600] cursor-pointer"
+                          className="text-black hover:text-purple-80 focus:text-purple-80 block font-cormorant text-[20px]/[28px] md:text-[28px]/[32px] font-[600] cursor-pointer"
                         >
                           {item.name}
                         </Disclosure.Button>

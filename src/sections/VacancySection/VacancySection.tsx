@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
-import SectionHeader from '@/components/SectionHeader/SectionHeader';
-import Button from '@/components/Button/Button';
-import DropDown from '@/components/DropDown/DropDown';
-import WorkForm from '@/components/WorkForm/WorkForm';
+import SectionHeader from 'components/SectionHeader/SectionHeader';
+import Button from 'components/Button/Button';
+import DropDown from 'components/DropDown/DropDown';
+import WorkForm from 'components/WorkForm/WorkForm';
 
-import useBreakpoints from '@/services/hooks/useBreakpoints';
+import useBreakpoints from 'services/hooks/useBreakpoints';
 
 import vacancySectionTextContent from './vacancy-section-text-content';
 import s from './vacancy-after-style';

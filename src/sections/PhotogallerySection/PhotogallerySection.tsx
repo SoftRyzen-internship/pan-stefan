@@ -1,5 +1,5 @@
-import Slider from '@/components/Slider/Slider';
-import SectionHeader from '@/components/SectionHeader/SectionHeader';
+import Slider from 'components/Slider/Slider';
+import SectionHeader from 'components/SectionHeader/SectionHeader';
 import photogallarySectionTextContent from './vacancy-section-text-content';
 
 function Photogallery() {

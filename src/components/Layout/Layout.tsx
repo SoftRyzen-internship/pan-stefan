@@ -2,11 +2,11 @@ import { FC, ReactNode } from 'react';
 import Head from 'next/head';
 import { useState } from 'react';
 
-import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
-import OrderButton from '../OrderButton/OrderButton';
-import DropDown from '../DropDown/DropDown';
-import RegisterForm from '../RegisterForm/RegisterForm';
+import Header from 'components/Header/Header';
+import Footer from 'components/Footer/Footer';
+import OrderButton from 'components/OrderButton/OrderButton';
+import DropDown from 'components/DropDown/DropDown';
+import RegisterForm from 'components/RegisterForm/RegisterForm';
 
 interface LayoutProps {
   children: ReactNode;

@@ -1,12 +1,12 @@
 import Image from 'next/image';
 
-import SectionHeader from '@/components/SectionHeader/SectionHeader';
-import Button from '@/components/Button/Button';
+import SectionHeader from 'components/SectionHeader/SectionHeader';
+import Button from 'components/Button/Button';
 
-import useBreakpoints from '../../services/hooks/useBreakpoints';
+import useBreakpoints from 'services/hooks/useBreakpoints';
 
 import heroTextContent from './hero-text-content';
-import mainImage from '../../../public/assets/images/hero/main-image.png';
+import mainImage from '@/public/assets/images/hero/main-image.png';
 
 function HeroSection() {
   const { less768px, bigger1280px } = useBreakpoints();

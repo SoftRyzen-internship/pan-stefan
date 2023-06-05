@@ -1,14 +1,15 @@
-
 .swiper-button-next:hover,
-.swiper-button-prev:hover {
+.swiper-button-prev:hover,
+.swiper-button-next:focus,
+.swiper-button-prev:focus {
   opacity: 0.9;
-  fill: #9C89B3;
+  fill: #9c89b3;
 }
 
 .swiper-button-prev:after,
 .swiper-button-next:after {
   display: none;
-} 
+}
 
 .swiper-button-next.swiper-button-next-custom,
 .swiper-button-prev.swiper-button-prev-custom {
@@ -17,14 +18,14 @@
   cursor: pointer;
 }
 
-.swiper-button-next.swiper-button-next-custom {  
+.swiper-button-next.swiper-button-next-custom {
   position: absolute;
   top: 0;
-  left: 53%; 
+  left: 53%;
   transform: translateY(50%);
   @media (min-width: 768px) {
     left: 51.5%;
-  };
+  }
   @media (min-width: 1280px) {
     left: 50%;
   }

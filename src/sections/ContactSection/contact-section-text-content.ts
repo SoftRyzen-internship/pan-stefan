@@ -1,6 +1,6 @@
-import FacebookIcon from '../../../public/assets/icon/facebook-ikon.svg';
-import TiktokIcon from '../../../public/assets/icon/tiktok-icon.svg';
-import InstagranIcon from '../../../public/assets/icon/instagram-icon.svg';
+import FacebookIcon from '@/public/assets/icon/facebook-ikon.svg';
+import TiktokIcon from '@/public/assets/icon/tiktok-icon.svg';
+import InstagranIcon from '@/public/assets/icon/instagram-icon.svg';
 
 const headerText = 'Контакти';
 
