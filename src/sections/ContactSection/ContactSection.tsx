@@ -40,7 +40,7 @@ function ContactSection() {
           </ul>
           <div
             className={`relative ${
-              less768px ? 'w-[280px]' : bigger1280px ? 'w-[800px]' : 'w-[336px]'
+              less768px ? 'w-[auto]' : bigger1280px ? 'w-[800px]' : 'w-[336px]'
             } ${less768px ? 'h-[340px]' : bigger1280px ? 'h-[436x]' : 'h-[412px]'}`}
           >
             <Image
