@@ -1,18 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@font-face {
-  font-family: 'TAN-PEARL';
-  src: local('TAN-PEARL Regular'), local('TAN-PEARL-Regular'),
-    url('../../public/fonts/TAN-PEARL-Regular.woff2') format('woff2'),
-    url('../../public/fonts/TAN-PEARL-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
 
 @font-face {
   font-family: 'Fixel Display';
@@ -76,7 +67,7 @@ body {
     padding: 40px 0;
 
     @media (min-width: 768px) {
-      padding: 60px 0;
+      padding: 80px 0;
     }
   }
 

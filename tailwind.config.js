@@ -25,7 +25,7 @@ module.exports = {
       fontFamily: {
         display: ['Fixel Display'],
         cormorant: ['Cormorant Infant'],
-        tanPearl: ['TAN-PEARL'],
+        tanPearl: ['Dancing Script'],
       },
       container: {
         screens: {
