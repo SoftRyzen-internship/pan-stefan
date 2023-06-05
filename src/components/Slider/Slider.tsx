@@ -11,13 +11,13 @@ import useBreakpoints from '@/services/hooks/useBreakpoints';
 import css from './Slider.module.css';
 
 const images = [
-  { id: '1', src: '/assets/images/slider/photo1.jpg', name: 'cake' },
-  { id: '2', src: '/assets/images/slider/photo2.jpg', name: 'cake' },
-  { id: '3', src: '/assets/images/slider/photo3.jpg', name: 'cake' },
-  { id: '4', src: '/assets/images/slider/photo4.jpg', name: 'cake' },
-  { id: '5', src: '/assets/images/slider/photo5.jpg', name: 'cake' },
-  { id: '6', src: '/assets/images/slider/photo6.jpg', name: 'cake' },
-  { id: '7', src: '/assets/images/slider/photo7.jpg', name: 'cake' },
+  { id: '1', src: '/assets/images/slider/photo1.jpg', name: 'Тістечка з кремом' },
+  { id: '2', src: '/assets/images/slider/photo2.jpg', name: 'Тірамісу' },
+  { id: '3', src: '/assets/images/slider/photo3.jpg', name: 'Тарталекта' },
+  { id: '4', src: '/assets/images/slider/photo4.jpg', name: 'Тістечка макарони' },
+  { id: '5', src: '/assets/images/slider/photo5.jpg', name: 'Тістечка желейні' },
+  { id: '6', src: '/assets/images/slider/photo6.jpg', name: 'Тістечко з чашкою кави' },
+  { id: '7', src: '/assets/images/slider/photo7.jpg', name: 'Тістечко з кремом і фруктами' },
 ];
 
 const Slider = () => {
