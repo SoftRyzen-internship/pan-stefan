@@ -1,14 +1,14 @@
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 
-import FormInput from '../FormInput/FormInput';
+import FormInput from 'components/FormInput/FormInput';
 import formField from './formFields';
-import Button from '../Button/Button';
-import FormNotification from '../FormNotification/FormNotification';
+import Button from 'components/Button/Button';
+import FormNotification from 'components/FormNotification/FormNotification';
 
 import Idata from './RegisterFormTypes';
-import { InitialFormState } from '../WorkForm/WorkFormTypes';
-import sendToTlg from '@/services/api/sendToTlg';
+import { InitialFormState } from 'components/WorkForm/WorkFormTypes';
+import sendToTlg from 'services/api/sendToTlg';
 import fieldsParams from './fieldsParams';
 
 function RegisterForm() {
