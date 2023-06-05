@@ -1,11 +1,11 @@
-import Slider from '@/components/Slider/Slider';
-import SectionHeader from '@/components/SectionHeader/SectionHeader';
-import photogallarySectionTextContent from './vacancy-section-text-content';
+import Slider from 'components/Slider/Slider';
+import SectionHeader from 'components/SectionHeader/SectionHeader';
+import photoGallarySectionTextContent from './gallery-section-text-content';
 
-function Photogallery() {
-  const { headerText } = photogallarySectionTextContent;
+function PhotoGallery() {
+  const { headerText } = photoGallarySectionTextContent;
   return (
-    <section id="Фотогалерея" className="section">
+    <section id="gallery" className="section">
       <div className="container">
         <div className="text-center">
           <SectionHeader text={headerText} colored />
@@ -16,4 +16,4 @@ function Photogallery() {
   );
 }
 
-export default Photogallery;
+export default PhotoGallery;

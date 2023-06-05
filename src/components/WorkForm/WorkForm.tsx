@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 
-import FormInput from '../FormInput/FormInput';
-import Button from '../Button/Button';
-import FormNotification from '../FormNotification/FormNotification';
+import FormInput from 'components/FormInput/FormInput';
+import Button from 'components/Button/Button';
+import FormNotification from 'components/FormNotification/FormNotification';
 
 import workFormFields from './workFormFields';
 import workFieldsParams from './workFieldsParams';

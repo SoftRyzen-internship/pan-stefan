@@ -1,11 +1,12 @@
 import Image from 'next/image';
+import { Element } from 'react-scroll';
 
-import SectionHeader from '@/components/SectionHeader/SectionHeader';
+import SectionHeader from 'components/SectionHeader/SectionHeader';
 
-import useBreakpoints from '@/services/hooks/useBreakpoints';
+import useBreakpoints from 'services/hooks/useBreakpoints';
 
 import aboutUsSectionTextContent from './aboutUs-section-text-content';
-import mainImage from '../../../public/assets/images/about-us/main-image.jpg';
+import mainImage from '@/public/assets/images/about-us/main-image.jpg';
 
 function AboutUsSection() {
   const { headerText, descriptionText, imageAltText } = aboutUsSectionTextContent;
@@ -22,7 +23,9 @@ function AboutUsSection() {
       }`}
     >
       <div className="container">
-        <SectionHeader text={headerText} />
+        <Element name='aboutUs'>
+          <SectionHeader text={headerText} />
+          </Element>
         <div className="md:flex md:justify-between md:items-start xl:justify-start xl:gap-x-[32px]">
           <p className="max-md:mb-[32px] max-w-[280px] md:order-2 md:max-w-[336px] xl:max-w-[563px] text-[16px]/[24px]">
             {descriptionText}

@@ -1,7 +1,7 @@
 import { Fragment, useRef } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 
-import CloseModal from '../../../public/assets/icon/CloseModal.svg';
+import CloseModal from '@/public/assets/icon/CloseModal.svg';
 import DropDownProps from './IDropDown';
 
 function DropDown(props: DropDownProps) {
@@ -34,7 +34,7 @@ function DropDown(props: DropDownProps) {
               leaveFrom="opacity-100 translate-y-0 sm:scale-100"
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-90"
             >
-              <Dialog.Panel className="relative border border-purple-80 h-auto w-[463px] p-10 transform rounded-[20px] bg-lightWite transition-all">
+              <Dialog.Panel className="relative border border-purple-80 h-auto w-[463px] xs:max-sm:p-6 p-10 transform rounded-[20px] bg-lightWite transition-all">
                 <button
                   aria-label="Close form"
                   type="button"
@@ -42,7 +42,7 @@ function DropDown(props: DropDownProps) {
                   onClick={() => setIsOpen(false)}
                 >
                   <CloseModal
-                    className="p-[6px] hover:opacity-90 rotate-0 hover:rotate-90 transition-all"
+                    className="p-[6px] hover:opacity-90 rotate-0 focus:opacity-90 rotate-0 hover:rotate-90 focus:rotate-90 transition-all"
                     width={28}
                     height={28}
                     loading="lazy"

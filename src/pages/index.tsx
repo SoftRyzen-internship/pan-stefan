@@ -1,11 +1,11 @@
-import Layout from '@/components/Layout/Layout';
+import Layout from 'components/Layout/Layout';
 
-import HeroSection from '@/sections/HeroSection/HeroSection';
-import AboutUsSection from '@/sections/AboutUsSection/AboutUsSection';
-import VacancySection from '@/sections/VacancySection/VacancySection';
-import Photogallery from '@/sections/PhotogallerySection/PhotogallerySection';
-import ContactSection from '@/sections/ContactSection/ContactSection';
-import ProductSection from '@/sections/ProductSection/ProductSection';
+import HeroSection from 'sections/HeroSection/HeroSection';
+import AboutUsSection from 'sections/AboutUsSection/AboutUsSection';
+import ProductSection from 'sections/ProductSection/ProductSection';
+import VacancySection from 'sections/VacancySection/VacancySection';
+import PhotoGallery from 'sections/PhotoGallerySection/PhotoGallerySection';
+import ContactSection from 'sections/ContactSection/ContactSection';
 
 export default function Home() {
   return (
@@ -15,7 +15,7 @@ export default function Home() {
         <AboutUsSection />
         <ProductSection />
         <VacancySection />
-        <Photogallery />
+        <PhotoGallery />
         <ContactSection />
       </>
     </Layout>

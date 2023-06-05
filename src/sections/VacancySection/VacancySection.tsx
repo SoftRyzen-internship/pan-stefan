@@ -1,11 +1,12 @@
 import { useState } from 'react';
+import { Element } from 'react-scroll';
 
-import SectionHeader from '@/components/SectionHeader/SectionHeader';
-import Button from '@/components/Button/Button';
-import DropDown from '@/components/DropDown/DropDown';
-import WorkForm from '@/components/WorkForm/WorkForm';
+import SectionHeader from 'components/SectionHeader/SectionHeader';
+import Button from 'components/Button/Button';
+import DropDown from 'components/DropDown/DropDown';
+import WorkForm from 'components/WorkForm/WorkForm';
 
-import useBreakpoints from '@/services/hooks/useBreakpoints';
+import useBreakpoints from 'services/hooks/useBreakpoints';
 
 import vacancySectionTextContent from './vacancy-section-text-content';
 import s from './vacancy-after-style';
@@ -35,7 +36,9 @@ function VacancySection() {
       className={`section overflow-hidden relative bg-purple-30 ${s.beforeBgStyle} ${s.afterBgStyle}`}
     >
       <div className={`container overflow-clip text-center md:text-xl xl:w-[864px] `}>
-        <SectionHeader text={headerText} />
+        <Element name='vacancy'>
+          <SectionHeader text={headerText} />
+          </Element>
         <div
           className={`flex flex-col justify-center relative ${s.afterStyle} bg-white text-black rounded-[400px] py-[80px] px-[31px] mb-9 md:py-[48px] `}
         >

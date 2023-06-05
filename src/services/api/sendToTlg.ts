@@ -1,4 +1,4 @@
-import Idata from '@/components/RegisterForm/Idata';
+import Idata from 'components/RegisterForm/Idata';
 import axios from 'axios';
 
 const sendToTlg = async (formData: Idata) => {
