@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { Element } from 'react-scroll';
 
 import SectionHeader from 'components/SectionHeader/SectionHeader';
 
@@ -12,9 +13,11 @@ function ContactSection() {
   const { less768px, bigger1280px } = useBreakpoints();
 
   return (
-    <section id="contact" className={`section relative bg-purple-30 md:py-[80px] xl:pb-[126px] `}>
+    <section id="contacts" className={`section relative bg-purple-30 md:py-[80px] xl:pb-[126px] `}>
       <div className="container">
-        <SectionHeader text={headerText} />
+        <Element name="contacts">
+          <SectionHeader text={headerText} />
+        </Element>
         <div className="md:flex  md:justify-between content-end">
           <ul>
             {contact.map((el, ind) => (
