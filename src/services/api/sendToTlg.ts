@@ -6,7 +6,7 @@ const sendToTlg = async (data: Idata, setIsError: any) => {
   const chat_id = process.env.NEXT_PUBLIC_TELEGRAM_CHAT_ID;
   const URI_API = `https://api.telegram.org/bot${tgbot}/sendMessage`;
   let message = `
-      <b> Ім'я: ${data.username}</b>
+      <p> Ім'я: ${data.username}</p>
       <b> Телефон: ${data.phone}</b>
       <b> Комментар: ${data.comment}</b>
     `;
