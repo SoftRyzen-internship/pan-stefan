@@ -12,7 +12,7 @@ function AboutUsSection() {
   const { less768px, bigger1280px } = useBreakpoints();
   return (
     <section
-      id="Пронас"
+      id="aboutUs"
       className={`section relative bg-purple-30 md:py-[80px] xl:pb-[126px] ${
         less768px
           ? ''

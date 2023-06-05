@@ -7,12 +7,12 @@ import useBreakpoints from '../../services/hooks/useBreakpoints';
 import mainImage from '../../../public/assets/images/hero/main-image.png';
 
 const navigation = [
-  { name: 'Головна', href: 'Головна', id: 1 },
-  { name: 'Про нас', href: 'Пронас', id: 2 },
+  { name: 'Головна', href: 'hero', id: 1 },
+  { name: 'Про нас', href: 'aboutUs', id: 2 },
   { name: 'Продукція', href: 'Продукція', id: 3 },
-  { name: 'Вакансії', href: 'Вакансії', id: 4 },
+  { name: 'Вакансії', href: 'vacancy', id: 4 },
   { name: 'Фотогалерея', href: 'Фотогалерея', id: 5 },
-  { name: 'Контакти', href: 'Контакти', id: 6 },
+  { name: 'Контакти', href: 'contact', id: 6 },
 ];
 
 function Header() {
