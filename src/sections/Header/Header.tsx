@@ -1,6 +1,6 @@
 import { Disclosure, Transition } from '@headlessui/react';
 import { XMarkIcon, Bars3BottomLeftIcon } from '@heroicons/react/24/outline';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, scroller } from 'react-scroll';
 
 import Image from 'next/image';
@@ -20,9 +20,13 @@ function Header() {
       });
     }
   };
-  mobileMenuOpen
-    ? (document.body.style.overflow = 'hidden')
-    : (document.body.style.overflow = 'auto');
+
+  useEffect(() => {
+    mobileMenuOpen
+      ? (document.body.style.overflow = 'hidden')
+      : (document.body.style.overflow = 'auto');
+  }, [mobileMenuOpen]);
+
   return (
     <header>
       <div className="border-b border-lightBrown-30 relative ">
