@@ -94,7 +94,7 @@ function Header() {
               >
                 {({ open, close }) => (
                   <div className="container flex flex-col items-center md:flex-row md:flex md:justify-between">
-                    <ul className="space-y-5 md:space-y-[20px] flex flex-col items-center md:items-start md:justify-center mb-[60px] ">
+                    <ul className="space-y-5 md:space-y-[20px] flex flex-col items-center md:items-start md:justify-center mb-[35px] ">
                       {navigation.map(item => (
                         <li key={item.id}>
                           <Link
