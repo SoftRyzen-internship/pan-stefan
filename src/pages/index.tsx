@@ -1,4 +1,4 @@
-import Layout from 'components/Layout/Layout';
+import Layout from 'sections/Layout/Layout';
 
 import HeroSection from 'sections/HeroSection/HeroSection';
 import AboutUsSection from 'sections/AboutUsSection/AboutUsSection';
