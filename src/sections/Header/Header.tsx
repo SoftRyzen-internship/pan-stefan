@@ -88,7 +88,7 @@ function Header() {
               </div>
 
               <Disclosure.Panel
-                className={`pb-[41px] pt-[60px] md:py-[100px] absolute hero-bg bg-center xl:hidden bg-lightWite left-0 right-0 top-full z-10 mt-[1px] w-screen ${
+                className={`pb-[41px] pt-[60px] md:pt-[110px] md:pb-[90px] absolute hero-bg bg-center xl:hidden bg-lightWite left-0 right-0 top-full z-10 mt-[1px] w-screen ${
                   open ? '' : 'hidden'
                 }`}
               >

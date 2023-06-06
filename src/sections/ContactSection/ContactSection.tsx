@@ -13,7 +13,10 @@ function ContactSection() {
   const { less768px, bigger1280px } = useBreakpoints();
 
   return (
-    <section id="contacts" className={`section relative bg-purple-30 md:py-[80px] xl:pb-[126px] `}>
+    <section
+      id="contacts"
+      className={`section relative bg-purple-30 md:pt-[80px] md:pb-[110px] xl:pb-[80px] `}
+    >
       <div className="container">
         <Element name="contacts">
           <SectionHeader text={headerText} />

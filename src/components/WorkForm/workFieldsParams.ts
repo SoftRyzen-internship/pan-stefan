@@ -35,7 +35,7 @@ const workFieldsParams: {
     required: `*Це поле обов'язкове`,
     pattern: {
       value: /^(\+380)\d{9}$/,
-      message: '*Введіть номер у такому форматі +380670000000',
+      message: '*Введіть номер у такому форматі +380000000000',
     },
     minLength: {
       value: 5,
