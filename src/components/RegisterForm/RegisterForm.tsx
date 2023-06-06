@@ -13,7 +13,11 @@ import sendToTlg from 'services/api/sendToTlg';
 import fieldsParams from './fieldsParams';
 
 function RegisterForm() {
-  const [state, setState] = useState<InitialFormState>({ isSending: false, error: false, finalMessage: null });
+  const [state, setState] = useState<InitialFormState>({
+    isSending: false,
+    error: false,
+    finalMessage: null,
+  });
   const { isSending, error, finalMessage } = state;
 
   const {
@@ -35,17 +39,27 @@ function RegisterForm() {
       setState(prevState => ({ ...prevState, isSending: true, error: false }));
       const result = await sendToTlg(data);
       if (result.ok) {
-        setState(prevState => ({ ...prevState, isSending: false, finalMessage: 'Незабаром наш менеджер звʼяжеться з вами' }));
+        setState(prevState => ({
+          ...prevState,
+          isSending: false,
+          finalMessage: 'Незабаром наш менеджер звʼяжеться з вами',
+        }));
         reset();
       }
     } catch (error) {
-      setState(prevState => ({ ...prevState, isSending: false, error: true, finalMessage: 'Щось пішло не так' }));
+      setState(prevState => ({
+        ...prevState,
+        isSending: false,
+        error: true,
+        finalMessage: 'Щось пішло не так',
+      }));
     }
   };
 
-  return !error && !finalMessage ? (<div className='relative'>
+  return !error && !finalMessage ? (
+    <div className="relative">
       <h2
-        className={`font-cormorant font-semibold text-center text-purple-80 mb-[32px] md:mb-[40px] xl:mb-[60px] text-[32px]/[39px] md:text-[40px]/[48px] xl:text-[48px]/[58px]`}
+        className={`font-cormorant font-semibold text-center text-purple-80 mb-[32px] md:mb-[40px] xl:mb-[60px] text-[32px] leading-[1.2] md:text-[40px] xl:text-[48px]`}
       >
         Зробити <br />
         замовлення
@@ -65,10 +79,14 @@ function RegisterForm() {
           />
         ))}
         <Button type="submit" text="Замовити" centered xwide></Button>
-    </form>
-    {isSending && <Loader />}
-    
-    </div>) :(error ? <FormNotification forOrdering forError subText={finalMessage} /> : <FormNotification forOrdering subText={finalMessage} />);
+      </form>
+      {isSending && <Loader />}
+    </div>
+  ) : error ? (
+    <FormNotification forOrdering forError subText={finalMessage} />
+  ) : (
+    <FormNotification forOrdering subText={finalMessage} />
+  );
 }
 
 export default RegisterForm;
