@@ -2,12 +2,12 @@ import Image from 'next/image';
 import { Element } from 'react-scroll';
 
 import SectionHeader from 'components/SectionHeader/SectionHeader';
-import Button from 'components/Button/Button';
+import LinkButton from 'components/LinkButton/LinkButton';
 
 import useBreakpoints from 'services/hooks/useBreakpoints';
 
 import heroTextContent from './hero-text-content';
-import mainImage from '@/public/assets/images/hero/main-image.png';
+import mainImage from '@/public/assets/images/hero/Hero@2x.png';
 
 function HeroSection() {
   const { less768px, bigger1280px } = useBreakpoints();
@@ -24,7 +24,7 @@ function HeroSection() {
             <p className="max-w-[280px] md:max-w-[336px] xl:max-w-[488px] mb-[28px] md:mb-[40px] xl:mb-[57px] text-black text-[18px]/[28px] md:text-[20px]/[28px]">
               {descriptionText}
             </p>
-            <Button type="button" text={buttonText} link={{ target: '' }} />
+            <LinkButton text={buttonText} link={{ target: 'products' }} />
           </div>
           <Image
             src={mainImage}

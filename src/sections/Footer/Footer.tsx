@@ -1,4 +1,4 @@
-import CompanyLogo from '../Logo/Logo';
+import CompanyLogo from '../../components/Logo/Logo';
 
 const Footer = () => {
   return (
