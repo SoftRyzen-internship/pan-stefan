@@ -1,5 +1,5 @@
 import SectionHeader from 'components/SectionHeader/SectionHeader';
-import Button from 'components/Button/Button';
+import LinkButton from 'components/LinkButton/LinkButton';
 import ProductCard from 'components/ProductCard/ProductCard';
 
 import useBreakpoints from 'services/hooks/useBreakpoints';
@@ -15,14 +15,20 @@ function ProductSection() {
       id="products"
       className={`section  ${bigger768px && 'product-bg'} bg-center bg-no-repeat bg-cover`}
     >
-      <div className="container ">
+      <div className="container text-center">
         <SectionHeader text={titleText} colored centered />
         <ul className="mt-[68px] mb-[32px] md:mt-[80px] md:mb-[60px] flex flex-wrap items-center md:justify-center gap-x-8 xl:gap-x-8 gap-y-[72px] xl:gap-y-[80px]">
           {products.map(product => {
             return <ProductCard key={product.id} product={product} />;
           })}
         </ul>
-        <Button type="button" text={buttonText} link={{ target: '' }} centered />
+        <LinkButton
+          download
+          text={buttonText}
+          long
+          link={{ target: 'assets/document/1.pdf' }}
+          centered
+        />
       </div>
     </section>
   );

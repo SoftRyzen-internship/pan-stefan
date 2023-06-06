@@ -1,17 +1,15 @@
-import { Disclosure } from '@headlessui/react';
+import { Disclosure, Transition } from '@headlessui/react';
 import { XMarkIcon, Bars3BottomLeftIcon } from '@heroicons/react/24/outline';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, scroller } from 'react-scroll';
 
 import Image from 'next/image';
-import useBreakpoints from 'services/hooks/useBreakpoints';
 import mainImage from '@/public/assets/images/hero/main-image.png';
 import CompanyLogo from 'components/Logo/Logo';
 import navigation from './navigation';
 
 function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { less768px } = useBreakpoints();
 
   const handleClick = (element: string) => {
     if (element) {
@@ -22,14 +20,20 @@ function Header() {
       });
     }
   };
-  
+
+  useEffect(() => {
+    mobileMenuOpen
+      ? (document.body.style.overflow = 'hidden')
+      : (document.body.style.overflow = 'auto');
+  }, [mobileMenuOpen]);
+
   return (
     <header>
-      <div className="border-b border-lightBrown-30">
-        <Disclosure as="nav" className="container relative px-5 md:px-8 xl:px-8">
+      <div className="border-b border-lightBrown-30 relative ">
+        <Disclosure as="nav" className="container  px-5 md:px-8 xl:px-8">
           {({ open }) => (
             <>
-              <div className=" flex items-center justify-between h-[100px]">
+              <div className=" flex items-center justify-between py-5">
                 <div className="flex items-center">
                   <CompanyLogo />
                   <div className="hidden xl:block">
@@ -84,13 +88,13 @@ function Header() {
               </div>
 
               <Disclosure.Panel
-                className={`pb-[41px] pt-[60px] md:py-[100px] absolute hero-bg bg-center xl:hidden bg-lightWite left-0 top-full z-10 mt-[1px] w-screen ${
+                className={`pb-[41px] pt-[60px] md:py-[100px] absolute hero-bg bg-center xl:hidden bg-lightWite left-0 right-0 top-full z-10 mt-[1px] w-screen ${
                   open ? '' : 'hidden'
                 }`}
               >
                 {({ open, close }) => (
-                  <div className="md:px-8 flex flex-col items-center md:flex-row md:flex md:justify-between">
-                    <ul className="space-y-5 md:space-y-7 flex flex-col items-center md:items-start md:justify-center mb-[60px] ">
+                  <div className="container flex flex-col items-center md:flex-row md:flex md:justify-between">
+                    <ul className="space-y-5 md:space-y-[20px] flex flex-col items-center md:items-start md:justify-center mb-[60px] ">
                       {navigation.map(item => (
                         <li key={item.id}>
                           <Link
@@ -107,7 +111,7 @@ function Header() {
                                 setMobileMenuOpen(true);
                               }
                             }}
-                            className="text-black hover:text-purple-80 focus:text-purple-80 block font-cormorant text-[20px]/[28px] md:text-[28px]/[32px] font-[600] cursor-pointer"
+                            className="text-black hover:text-purple-80 focus:text-purple-80 block font-cormorant text-[20px] leading-[1.4] md:text-[28px] font-[600] cursor-pointer"
                           >
                             {item.name}
                           </Link>
@@ -116,10 +120,11 @@ function Header() {
                     </ul>
                     <div>
                       <Image
+                        className="w-[280px] h-[307px] md:w-[336px] md:h-[368px]"
                         src={mainImage}
                         alt="Святковий пиріг зі свечами"
-                        width={less768px ? 280 : 336}
-                        height={less768px ? 307 : 368}
+                        width={488}
+                        height={543}
                       />
                     </div>
                   </div>

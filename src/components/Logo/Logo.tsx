@@ -11,7 +11,7 @@ const CompanyLogo: FC = () => (
   >
     <Logo aria-label="Company logo" className="mx-auto fill-inherit hover:inherit focus:inherit" />
     <p
-      className={`mx-auto font-tanPearl text-[18px]/[16px] md:text-[26px]/[22px] uppercase max-w-[85px]`}
+      className={`mx-auto font-tanPearl text-[18px] leading-[0.8] md:text-[26px] uppercase max-w-[85px]`}
     >
       Pan Stefan
     </p>
