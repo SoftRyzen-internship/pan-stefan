@@ -95,3 +95,7 @@ body {
 .product1 {
   background: url('../../public/assets/images/product/product1.png');
 }
+
+.product-bg {
+  background-image: url('../../public/assets/images/product/product-bg.svg');
+}

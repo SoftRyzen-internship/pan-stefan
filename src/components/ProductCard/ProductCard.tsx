@@ -7,7 +7,7 @@ function ProductCard(props: IProduct) {
 
   return (
     <li
-      className={`relative bg-lightWite text-center pt-[214px] h-[508px] md:h-[472px] xl:h-[456px] w-[280px] md:w-[336px] xl:w-[384px] px-5 rounded-t-[200px] border border-purple-80 `}
+      className={`relative bg-lightWite text-center pt-[214px] pb-5 min-h-[508px] md:min-h-[472px] xl:min-h-[456px] w-[280px] md:w-[336px] xl:w-[384px] px-5 rounded-t-[200px] border border-purple-80 `}
     >
       <div className="absolute left-0 right-0 w-[100%] top-[-5%]">
         {
@@ -21,7 +21,7 @@ function ProductCard(props: IProduct) {
         }
       </div>
 
-      <h3 className="font-cormorant text-purple-80 font-semibold text-[32px] mb-[22px] leading-9	">
+      <h3 className="relative block font-cormorant text-purple-80 font-semibold text-[32px] mb-[22px] leading-9	 w-[100%] after:absolute  after:bg-cardGradient after:w-[162px] after:h-[1px] after:bottom-[-10px] after:left-[50%] after:translate-x-[-50%] after:block">
         {category}
       </h3>
       <p className="text-black leading-6">{productDescription}</p>
