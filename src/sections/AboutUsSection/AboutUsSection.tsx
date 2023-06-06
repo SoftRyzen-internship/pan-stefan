@@ -10,7 +10,7 @@ import mainImage from '@/public/assets/images/about-us/main-image.jpg';
 
 function AboutUsSection() {
   const { headerText, descriptionText, imageAltText } = aboutUsSectionTextContent;
-  const { less768px, bigger1280px } = useBreakpoints();
+  const { less480px, less768px, bigger1280px } = useBreakpoints();
   return (
     <section
       id="aboutUs"
@@ -27,15 +27,15 @@ function AboutUsSection() {
           <SectionHeader text={headerText} />
           </Element>
         <div className="md:flex md:justify-between md:items-start xl:justify-start xl:gap-x-[32px]">
-          <p className="max-md:mb-[32px] max-w-[280px] md:order-2 md:max-w-[336px] xl:max-w-[563px] text-[16px]/[24px]">
+          <p className="max-md:mb-[32px] max-w-[280px] md:order-2 s:max-w-[420px] md:max-w-[336px] xl:max-w-[563px] text-[16px]/[24px]">
             {descriptionText}
           </p>
           <Image
             className="md:order-1"
             src={mainImage}
             alt={imageAltText}
-            width={less768px ? 280 : bigger1280px ? 592 : 336}
-            height={less768px ? 210 : bigger1280px ? 444 : 252}
+            width={less480px ? 280 : (less768px ? 420 : (bigger1280px ? 592 : 336))}
+            height={less480px ? 210 : (less768px ? 315 :  (bigger1280px ? 444 : 252))}
           />
         </div>
       </div>

@@ -22,7 +22,7 @@ function Header() {
       });
     }
   };
-
+  
   return (
     <header>
       <div className="border-b border-lightBrown-30">
