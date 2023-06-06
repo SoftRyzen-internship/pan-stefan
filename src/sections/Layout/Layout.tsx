@@ -23,9 +23,14 @@ const Layout: FC<LayoutProps> = ({ children }) => {
     <>
       <Head>
         <title>Pan Stefan</title>
-        <meta name="description" content="Cake-shop Pan Stefan"></meta>
-        <meta name="og:title" content="Cake-shop"></meta>
-        <meta name="og:description" content="Cake-shop Pan Stefan"></meta>
+        <meta property="og:title" content="PAN STEFAN" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="" />
+        <meta property="og:image:width" content="300" />
+        <meta property="og:image:height" content="300" />
+        <meta property="og:url" content=""/>
+        <meta property="og:description" content="Наші смаколики  - то любов" />
+        <meta property="og:locale" content="uk_UA" />
       </Head>
       <Header />
       <main>{children}</main>
