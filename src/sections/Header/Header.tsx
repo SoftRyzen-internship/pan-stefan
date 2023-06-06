@@ -22,7 +22,9 @@ function Header() {
       });
     }
   };
-
+  mobileMenuOpen
+    ? (document.body.style.overflow = 'hidden')
+    : (document.body.style.overflow = 'auto');
   return (
     <header>
       <div className="border-b border-lightBrown-30 relative ">
