@@ -27,7 +27,7 @@ function AboutUsSection() {
           <SectionHeader text={headerText} />
         </Element>
         <div className="md:flex md:justify-between md:items-start xl:justify-start xl:gap-x-[32px]">
-          <p className="max-md:mb-[32px] max-w-[280px] md:order-2 s:max-w-[100%] md:max-w-[336px] xl:max-w-[563px] leading-[1.5] text-[16px]">
+          <p className="max-md:mb-[32px] max-w-[280px] md:order-2 s:max-w-[100%] md:max-w-[336px] xl:max-w-[563px] leading-[1.5] text-base">
             {descriptionText}
           </p>
           <Image

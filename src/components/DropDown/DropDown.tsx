@@ -36,13 +36,13 @@ function DropDown(props: DropDownProps) {
             >
               <Dialog.Panel className="relative border border-purple-80 h-auto w-[463px] xs:max-sm:p-6 p-10 transform rounded-[20px] bg-lightWite transition-all">
                 <button
-                  aria-label="Close form"
+                  aria-label="Закриття форми"
                   type="button"
                   className="absolute top-2 right-2"
                   onClick={() => setIsOpen(false)}
                 >
                   <CloseModal
-                    className="p-[6px] hover:opacity-90 focus:opacity-90 rotate-0 hover:rotate-90 focus:rotate-90 transition-all"
+                    className="p-1.5 hover:opacity-90 focus:opacity-90 rotate-0 hover:rotate-90 focus:rotate-90 transition-all"
                     width={28}
                     height={28}
                     loading="lazy"

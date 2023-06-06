@@ -4,7 +4,7 @@ function FormNotification(props: FormNotificationProps) {
   const { forOrdering, subText, forError } = props;
   return (
     <div className="before:w-[106px] before:h-[130px] before:bg-[url('./../../public/assets/images/notification/notification-bg.png')] before:content='' before:absolute before:bottom-[14px] before:left-[3%] bg-no-repeat text-center">
-      <h2 className="max-w-[242px] mx-auto mb-[24px] text-[32px] leading-[1.12] text-purple-80 font-cormorant">
+      <h2 className="max-w-[242px] mx-auto mb-6 text-[32px] leading-[1.12] text-purple-80 font-cormorant">
         {forError
           ? 'Упссс...'
           : forOrdering

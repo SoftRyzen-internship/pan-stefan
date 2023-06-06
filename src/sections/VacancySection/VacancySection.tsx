@@ -35,7 +35,7 @@ function VacancySection() {
       id="vacancy"
       className={`section overflow-hidden relative bg-purple-30 ${bgStyle.beforeBgStyle} ${bgStyle.afterBgStyle}`}
     >
-      <div className={`container overflow-clip text-center md:text-xl xl:w-[864px] `}>
+      <div className={`container overflow-clip text-center md:text-xl xl:w-[926px] `}>
         <Element name="vacancy">
           <SectionHeader text={headerText} />
         </Element>
@@ -59,7 +59,7 @@ function VacancySection() {
           <p>{timeText}</p>
           <p>{payText}</p>
         </div>
-        <p className="mb-9 md:w-[350px] xl:w-[400px] mx-auto">{contactText}</p>
+        <p className="mb-8 md:w-[350px] xl:w-[400px] mx-auto">{contactText}</p>
         <Button type="button" text={buttonText} long lightHover centered onClick={handleClick} />
       </div>
 

@@ -55,16 +55,12 @@ function WorkForm() {
   return !error && !finalMessage ? (
     <div className="relative">
       <h2
-        className={`font-cormorant font-semibold text-center text-purple-80 mb-[32px] md:mb-[40px] xl:mb-[60px] text-[32px] leading-[1.2] md:text-[40px] xl:text-[48px]`}
+        className={`font-cormorant font-semibold text-center text-purple-80 mb-[32px] md:mb-[40px] xl:mb-[60px] text-[32px] leading-[1.2] md:text-[40px] xl:text-5xl`}
       >
         Хочу <br />
         працювати
       </h2>
-      <form
-        onSubmit={handleSubmit(onSubmitHandler)}
-        aria-label="Форма запису на роботу"
-        className=""
-      >
+      <form onSubmit={handleSubmit(onSubmitHandler)}>
         {workFormFields.map((field, ind) => (
           <FormInput
             key={ind}

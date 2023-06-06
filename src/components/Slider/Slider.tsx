@@ -48,12 +48,22 @@ const Slider = () => {
         <div
           className={`swiper-button-next  swiper-button-next-custom ${css['swiper-button-next-custom']} ${css['swiper-button-next']}`}
         >
-          <NextIcon width={48} height={32} className="py-[7px] px-[5px]" aria-label="next button" />
+          <NextIcon
+            width={48}
+            height={32}
+            className="py-[7px] px-[5px]"
+            aria-label="Наступне зображення"
+          />
         </div>
         <div
           className={`swiper-button-prev swiper-button-prev-custom ${css['swiper-button-prev-custom']} ${css['swiper-button-prev']}`}
         >
-          <PrevIcon width={48} height={32} className="py-[7px] px-[5px]" aria-label="prev button" />
+          <PrevIcon
+            width={48}
+            height={32}
+            className="py-[7px] px-[5px]"
+            aria-label="Попереднє зображення"
+          />
         </div>
       </div>
     </>

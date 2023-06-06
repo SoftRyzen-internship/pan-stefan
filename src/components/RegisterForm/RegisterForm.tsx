@@ -59,16 +59,12 @@ function RegisterForm() {
   return !error && !finalMessage ? (
     <div className="relative">
       <h2
-        className={`font-cormorant font-semibold text-center text-purple-80 mb-[32px] md:mb-[40px] xl:mb-[60px] text-[32px] leading-[1.2] md:text-[40px] xl:text-[48px]`}
+        className={`font-cormorant font-semibold text-center text-purple-80 mb-[32px] md:mb-10 xl:mb-[60px] text-[32px] leading-[1.2] md:text-[40px] xl:text-5xl`}
       >
         Зробити <br />
         замовлення
       </h2>
-      <form
-        onSubmit={handleSubmit(onSubmitHandler)}
-        aria-label="Форма замовлення продукції"
-        className=""
-      >
+      <form onSubmit={handleSubmit(onSubmitHandler)}>
         {formField.map((field, ind) => (
           <FormInput
             key={ind}
