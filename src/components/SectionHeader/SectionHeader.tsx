@@ -4,7 +4,7 @@ function SectionHeader(props: SectionHeaderProps) {
   const { hero, text, centered, colored } = props;
   return hero ? (
     <h1
-      className={`font-tanPearl font-normal text-purple-80 mb-[28px] md:mb-[40px] xl:mb-[41px] text-[60px]/[55px] md:text-[80px]/[71px] xl:text-[120px]/[110px]`}
+      className={`font-tanPearl font-normal text-purple-80 mb-[28px] md:mb-[40px] xl:mb-[41px] text-[60px] leading-[0.9] md:text-[80px] xl:text-[120px]`}
     >
       {text}
     </h1>
@@ -12,7 +12,7 @@ function SectionHeader(props: SectionHeaderProps) {
     <h2
       className={`font-cormorant font-semibold ${centered ? 'text-center' : ''} ${
         colored ? 'text-purple-80' : 'text-white'
-      } mb-[32px] md:mb-[40px] xl:mb-[60px] text-[32px]/[39px] md:text-[40px]/[48px] xl:text-[48px]/[58px]`}
+      } mb-[32px] md:mb-[40px] xl:mb-[60px] text-[32px] leading-[1.2] md:text-[40px] xl:text-[48px]`}
     >
       {text}
     </h2>
