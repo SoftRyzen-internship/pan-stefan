@@ -1,10 +1,8 @@
-import { Link } from 'react-scroll';
-
 import ButtonProps from './ButtonTypes';
 
 function Button(props: ButtonProps) {
   const { type, link, text, centered, long, lightHover, onClick, xwide } = props;
-  const core = (
+  return (
     <button
       type={type}
       onClick={onClick}
@@ -18,13 +16,6 @@ function Button(props: ButtonProps) {
     >
       {text}
     </button>
-  );
-  return link ? (
-    <Link to={link.target} smooth={true} duration={500}>
-      {core}
-    </Link>
-  ) : (
-    core
   );
 }
 

@@ -36,9 +36,9 @@ function VacancySection() {
       className={`section overflow-hidden relative bg-purple-30 ${s.beforeBgStyle} ${s.afterBgStyle}`}
     >
       <div className={`container overflow-clip text-center md:text-xl xl:w-[864px] `}>
-        <Element name='vacancy'>
+        <Element name="vacancy">
           <SectionHeader text={headerText} />
-          </Element>
+        </Element>
         <div
           className={`flex flex-col justify-center relative ${s.afterStyle} bg-white text-black rounded-[400px] py-[80px] px-[31px] mb-9 md:py-[48px] `}
         >
@@ -60,7 +60,7 @@ function VacancySection() {
           <p>{payText}</p>
         </div>
         <p className="mb-9 md:w-[350px] xl:w-[400px] mx-auto">{contactText}</p>
-        <Button type="button" text={buttonText} lightHover centered onClick={handleClick} />
+        <Button type="button" text={buttonText} long lightHover centered onClick={handleClick} />
       </div>
 
       <DropDown isOpen={open} setIsOpen={setOpen}>
