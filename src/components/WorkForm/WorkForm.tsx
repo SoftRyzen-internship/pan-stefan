@@ -5,6 +5,7 @@ import axios from 'axios';
 import FormInput from 'components/FormInput/FormInput';
 import Button from 'components/Button/Button';
 import FormNotification from 'components/FormNotification/FormNotification';
+import Loader from 'components/Loader/Loader';
 
 import workFormFields from './workFormFields';
 import workFieldsParams from './workFieldsParams';
@@ -65,7 +66,7 @@ function WorkForm() {
         ))}
         <Button type="submit" text="Відправити" centered xwide></Button>
     </form>
-    {isSending && <p className='absolute top-[50%] left-[50%] text-[70px] translate-x-[-50%] translate-y-[-50%] text-red-600'>spinner...</p>}
+      {isSending && <Loader />}
   </div>
     ) : (error ? <FormNotification forError subText={finalMessage} /> : <FormNotification subText={finalMessage}/>);
 }
