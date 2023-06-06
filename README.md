@@ -1,38 +1,75 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Проект для кондитерської "Pan Stefan"
 
-## Getting Started
+Сайт кондитерської "Pan Stefan" є одно-сторінковим сайтом, створеним для презентації продукції та
+послуг цієї кондитерської. Ми пропонуємо вишукані та смачні десерти, які задовольнять смаки навіть
+найвимогливіших клієнтів.
 
-First, run the development server:
+## Пере-використовувані компоненти
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+У нашому проекті "Pan Stefan" ми використовуємо кілька малих пере-використовуваних компонентів, які
+можуть бути легко використані для побудови веб-інтерфейсу, а саме:
+
+### Кнопка
+
+Компонент "Кнопка" використовується для створення інтерактивних кнопок на веб-сторінці. Він має
+наступні пропси:
+
+- text (текст кнопки)
+- onClick (функція, яка виконується при натисканні на кнопку)
+- color (колір кнопки)
+
+Приклад використання:
+
+```javascript
+<Button text="Замовити зараз" onClick={handleClick} color="primary" />
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Заголовок
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Компонент "Заголовок" використовується для відображення заголовків розділів або блоків на
+веб-сторінці. Він має наступні пропси:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- text (текст заголовка)
+- size (розмір заголовка, наприклад, "h1", "h2" і т.д.)
+- color (колір заголовка)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Приклад використання:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```javascript
+<Heading text="Про нас" size="h2" color="primary" />
+```
 
-## Learn More
+## Ви можете переглянути макет проекту "Pan Stefan" [за посиланням тут.](https://www.figma.com/file/QwMYiKCk8yjSTzrSsdlaOG/Pan-Stefan?node-id=0-1)
 
-To learn more about Next.js, take a look at the following resources:
+# Сайт "Pan Stefan" складається з наступних секцій:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Головна:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Ця секція привертає увагу користувачів і надає загальну інформацію про кондитерську "Pan Stefan".
 
-## Deploy on Vercel
+2. Про нас:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Секція, що містить детальну інформацію про кондитерську "Pan Stefan", включаючи її історію, цінності
+та команду фахівців.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+3. Продукція:
+
+У цій секції представлена широка гама вишуканих десертів, які пропонує "Pan Stefan". Кожен десерт
+супроводжується зображенням, описом та ціною.
+
+4. Вакансії:
+
+В даній секції розміщена інформація про актуальні вакансії, доступні у кондитерській "Pan Stefan".
+Здійснюється запрошення для тих, хто бажає приєднатися до нашої талановитої команди.
+
+5. Фотогалерея:
+
+Секція, де можна переглянути красиві фотографії десертів та інтер'єру кондитерської "Pan Stefan".
+
+6. Контакти:
+
+У цій секції наведені контактні дані, такі як адреса, телефон та електронна пошта, для зв'язку з
+кондитерською "Pan Stefan".
+
+Сайт має хедер, в якому розміщена навігація по сторінці за допомогою скролінгу, що дозволяє
+користувачам швидко переходити до різних секцій сайту.
