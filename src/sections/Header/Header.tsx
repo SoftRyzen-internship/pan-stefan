@@ -4,14 +4,12 @@ import { useState } from 'react';
 import { Link, scroller } from 'react-scroll';
 
 import Image from 'next/image';
-import useBreakpoints from 'services/hooks/useBreakpoints';
 import mainImage from '@/public/assets/images/hero/main-image.png';
 import CompanyLogo from 'components/Logo/Logo';
 import navigation from './navigation';
 
 function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { less768px } = useBreakpoints();
 
   const handleClick = (element: string) => {
     if (element) {
@@ -109,7 +107,7 @@ function Header() {
                                 setMobileMenuOpen(true);
                               }
                             }}
-                            className="text-black hover:text-purple-80 focus:text-purple-80 block font-cormorant text-[20px]/[28px] md:text-[28px]/[32px] font-[600] cursor-pointer"
+                            className="text-black hover:text-purple-80 focus:text-purple-80 block font-cormorant text-[20px] leading-[1.4] md:text-[28px] font-[600] cursor-pointer"
                           >
                             {item.name}
                           </Link>
@@ -118,10 +116,11 @@ function Header() {
                     </ul>
                     <div>
                       <Image
+                        className="w-[280px] h-[307px] md:w-[336px] md:h-[368px]"
                         src={mainImage}
                         alt="Святковий пиріг зі свечами"
-                        width={less768px ? 280 : 336}
-                        height={less768px ? 307 : 368}
+                        width={488}
+                        height={543}
                       />
                     </div>
                   </div>

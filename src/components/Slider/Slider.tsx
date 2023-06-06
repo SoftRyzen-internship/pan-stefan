@@ -42,8 +42,8 @@ const Slider = () => {
                   <Image
                     src={path.src}
                     alt={path.name}
-                    width={less768px ? 280 : bigger1280px ? 384 : 336}
-                    height={less768px ? 280 : bigger1280px ? 384 : 336}
+                    width={384}
+                    height={384}
                     loading="lazy"
                     className="object-cover w-full cursor-move"
                   />
