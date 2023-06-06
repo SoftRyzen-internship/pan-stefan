@@ -2,7 +2,7 @@ import { Html, Head, Main, NextScript } from 'next/document'
 
 export default function Document() {
   return (
-    <Html lang="uk">
+    <Html lang="uk" prefix="og: https://ogp.me/ns#">
       <Head />
       <body>
         <Main />

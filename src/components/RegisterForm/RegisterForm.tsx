@@ -5,6 +5,7 @@ import FormInput from 'components/FormInput/FormInput';
 import formField from './formFields';
 import Button from 'components/Button/Button';
 import FormNotification from 'components/FormNotification/FormNotification';
+import Loader from 'components/Loader/Loader';
 
 import Idata from './RegisterFormTypes';
 import { InitialFormState } from 'components/WorkForm/WorkFormTypes';
@@ -65,7 +66,8 @@ function RegisterForm() {
         ))}
         <Button type="submit" text="Замовити" centered xwide></Button>
     </form>
-    {isSending && <p className='absolute top-[50%] left-[50%] text-[70px] translate-x-[-50%] translate-y-[-50%] text-red-600'>spinner...</p>}
+    {isSending && <Loader />}
+    
     </div>) :(error ? <FormNotification forOrdering forError subText={finalMessage} /> : <FormNotification forOrdering subText={finalMessage} />);
 }
 
