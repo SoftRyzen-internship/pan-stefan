@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { useState } from 'react';
 
 import Header from 'sections/Header/Header';
-import Footer from 'sections/AboutUsSection/Footer/Footer';
+import Footer from 'sections/Footer/Footer';
 import OrderButton from 'components/OrderButton/OrderButton';
 import DropDown from 'components/DropDown/DropDown';
 import RegisterForm from 'components/RegisterForm/RegisterForm';
