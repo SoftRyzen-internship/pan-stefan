@@ -33,10 +33,11 @@ const Layout: FC<LayoutProps> = ({ children }) => {
         <meta property="og:title" content="PAN STEFAN" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="" />
-        <meta property="og:image" content="" />
+        <meta property="og:image" content={'/assets/images/slider/photo6.jpg'} />
+        <meta property="og:image:type" content="image/jpeg" />
         <meta property="og:image:width" content="300" />
         <meta property="og:image:height" content="300" />
-        <meta property="og:image:alt" content="" />
+        <meta property="og:image:alt" content="Стакан капучіно та тістечко" />
         <meta property="og:description" content="Наші смаколики  - то любов" />
         <meta property="og:locale" content="uk_UA" />
       </Head>
