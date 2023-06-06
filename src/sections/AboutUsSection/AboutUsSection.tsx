@@ -23,19 +23,20 @@ function AboutUsSection() {
       }`}
     >
       <div className="container">
-        <Element name='aboutUs'>
+        <Element name="aboutUs">
           <SectionHeader text={headerText} />
-          </Element>
+        </Element>
         <div className="md:flex md:justify-between md:items-start xl:justify-start xl:gap-x-[32px]">
-          <p className="max-md:mb-[32px] max-w-[280px] md:order-2 md:max-w-[336px] xl:max-w-[563px] text-[16px]/[24px]">
+          <p className="max-md:mb-[32px] max-w-[280px] md:order-2 md:max-w-[336px] xl:max-w-[563px] leading-[1.5] text-[16px]">
             {descriptionText}
           </p>
           <Image
-            className="md:order-1"
+            className="md:order-1 w-[280px] h-[210px] md:w-[336px] md:h-[252px] xl:w-[592px] xl:h-[444px]"
             src={mainImage}
             alt={imageAltText}
-            width={less768px ? 280 : bigger1280px ? 592 : 336}
-            height={less768px ? 210 : bigger1280px ? 444 : 252}
+            width={592}
+            height={444}
+            loading="lazy"
           />
         </div>
       </div>

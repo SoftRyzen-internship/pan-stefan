@@ -9,11 +9,15 @@ const address = {
   description: 'м.Дніпро, Космонавтів, 2',
   link: 'https://goo.gl/maps/LCsNYnTTnqPPQFJV7',
 };
-const phone = { title: 'Номер телефону: ', description: '+380000000000', link: 'tel:+74951111111' };
+const phone = {
+  title: 'Номер телефону: ',
+  description: '+380000000000',
+  link: 'tel:+380000000000',
+};
 const email = {
   title: 'Адреса електронної пошти: ',
   description: 'pan.stefan@gmail.com',
-  link: 'mailto:+74951111111',
+  link: 'mailto:pan.stefan@gmail.com',
 };
 const social = {
   title: 'Соцмережі: ',

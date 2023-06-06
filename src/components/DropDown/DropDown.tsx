@@ -42,7 +42,7 @@ function DropDown(props: DropDownProps) {
                   onClick={() => setIsOpen(false)}
                 >
                   <CloseModal
-                    className="p-[6px] hover:opacity-90 rotate-0 focus:opacity-90 rotate-0 hover:rotate-90 focus:rotate-90 transition-all"
+                    className="p-[6px] hover:opacity-90 focus:opacity-90 rotate-0 hover:rotate-90 focus:rotate-90 transition-all"
                     width={28}
                     height={28}
                     loading="lazy"

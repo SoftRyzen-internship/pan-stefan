@@ -27,6 +27,12 @@ module.exports = {
         cormorant: ['Cormorant Infant'],
         tanPearl: ['Dancing Script'],
       },
+
+      backgroundImage: {
+        cardGradient:
+          'linear-gradient(270deg, rgba(203, 179, 137, 0) 0%, #CBB389 50.52%, rgba(203, 179, 137, 0) 99.9%)',
+      },
+
       container: {
         screens: {
           xs: '320px',
