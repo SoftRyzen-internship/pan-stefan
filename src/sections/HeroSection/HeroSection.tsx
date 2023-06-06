@@ -5,7 +5,7 @@ import SectionHeader from 'components/SectionHeader/SectionHeader';
 import Button from 'components/Button/Button';
 
 import heroTextContent from './hero-text-content';
-import mainImage from '@/public/assets/images/hero/main-image.png';
+import mainImage from '@/public/assets/images/hero/Hero@2x.png';
 
 function HeroSection() {
   const { logoText, buttonText, descriptionText, imageAltText } = heroTextContent;
