@@ -2,8 +2,8 @@ import { FC, ReactNode } from 'react';
 import Head from 'next/head';
 import { useState } from 'react';
 
-import Header from 'components/Header/Header';
-import Footer from 'components/Footer/Footer';
+import Header from 'sections/Header/Header';
+import Footer from 'sections/AboutUsSection/Footer/Footer';
 import OrderButton from 'components/OrderButton/OrderButton';
 import DropDown from 'components/DropDown/DropDown';
 import RegisterForm from 'components/RegisterForm/RegisterForm';
