@@ -35,15 +35,15 @@ const workFieldsParams: {
     required: `*Це поле обов'язкове`,
     pattern: {
       value: /^(\+380)\d{9}$/,
-      message: '*Не вірний формат номеру',
+      message: '*Введіть номер у такому форматі +380670000000',
     },
     minLength: {
       value: 5,
-      message: '*Не вірний формат номеру',
+      message: '*Номер не може бути меншим за 5 цифр',
     },
     maxLength: {
       value: 13,
-      message: '*Не вірний формат номеру',
+      message: '*Номер не може бути більшим за 13 цифр',
     },
   },
 
@@ -51,15 +51,15 @@ const workFieldsParams: {
     required: `*Це поле обов'язкове`,
     pattern: {
       value: /^\d+$/,
-      message: '*Не вірний формат',
+      message: '*Введіть будь ласка лише цифри',
     },
     minLength: {
       value: 2,
-      message: '*Не вірний формат ',
+      message: '*Введіть не меньше 2 цифр',
     },
     maxLength: {
       value: 3,
-      message: '*Не вірний формат',
+      message: '*Введіть не більше 3 цифр',
     },
   },
 

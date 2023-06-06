@@ -9,7 +9,7 @@ import WorkForm from 'components/WorkForm/WorkForm';
 import useBreakpoints from 'services/hooks/useBreakpoints';
 
 import vacancySectionTextContent from './vacancy-section-text-content';
-import s from './vacancy-after-style';
+import bgStyle from './vacancy-after-style';
 
 function VacancySection() {
   const {
@@ -23,7 +23,7 @@ function VacancySection() {
     buttonText,
   } = vacancySectionTextContent;
 
-  const { less768px, bigger768px, bigger1280px } = useBreakpoints();
+  const { less768px } = useBreakpoints();
   const [open, setOpen] = useState(false);
 
   const handleClick = () => {
@@ -33,14 +33,14 @@ function VacancySection() {
   return (
     <section
       id="vacancy"
-      className={`section overflow-hidden relative bg-purple-30 ${s.beforeBgStyle} ${s.afterBgStyle}`}
+      className={`section overflow-hidden relative bg-purple-30 ${bgStyle.beforeBgStyle} ${bgStyle.afterBgStyle}`}
     >
       <div className={`container overflow-clip text-center md:text-xl xl:w-[864px] `}>
         <Element name="vacancy">
           <SectionHeader text={headerText} />
         </Element>
         <div
-          className={`flex flex-col justify-center relative ${s.afterStyle} bg-white text-black rounded-[400px] py-[80px] px-[31px] mb-9 md:py-[48px] `}
+          className={`flex flex-col justify-center relative ${bgStyle.afterStyle} bg-white text-black rounded-[400px] py-[80px] px-[31px] mb-9 md:py-[48px] `}
         >
           {less768px ? (
             <p className="">
