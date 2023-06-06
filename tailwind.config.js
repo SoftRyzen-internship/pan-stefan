@@ -36,12 +36,14 @@ module.exports = {
       container: {
         screens: {
           xs: '320px',
+          s: '480px',
           md: '768px',
           xl: '1280px',
         },
         padding: {
           DEFAULT: '32px',
           xs: '20px',
+          s: '20px',
           md: '32px',
           xl: '32px',
         },

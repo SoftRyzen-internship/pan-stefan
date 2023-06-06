@@ -9,22 +9,13 @@ import PrevIcon from '@/public/assets/icon/Left.svg';
 
 import useBreakpoints from 'services/hooks/useBreakpoints';
 import css from './Slider.module.css';
-
-const images = [
-  { id: '1', src: '/assets/images/slider/photo1.jpg', name: 'Тістечка з кремом' },
-  { id: '2', src: '/assets/images/slider/photo2.jpg', name: 'Тірамісу' },
-  { id: '3', src: '/assets/images/slider/photo3.jpg', name: 'Тарталетка' },
-  { id: '4', src: '/assets/images/slider/photo4.jpg', name: 'Тістечка макарони' },
-  { id: '5', src: '/assets/images/slider/photo5.jpg', name: 'Тістечка желейні' },
-  { id: '6', src: '/assets/images/slider/photo6.jpg', name: 'Тістечко з чашкою кави' },
-  { id: '7', src: '/assets/images/slider/photo7.jpg', name: 'Тістечко з кремом і фруктами' },
-];
+import images from './sliderImages';
 
 const Slider = () => {
   const { less768px, bigger1280px } = useBreakpoints();
   return (
     <>
-      <ul className="relative h-[280px] md:h-[336px] xl:h-[384px]">
+      <ul className="relative max-md:h-full md:h-[336px] xl:h-[384px]">
         <Swiper
           navigation={{
             nextEl: '.swiper-button-next',
@@ -37,7 +28,7 @@ const Slider = () => {
         >
           {images.map(path => (
             <li key={path.id} className="">
-              <SwiperSlide className="w-[280px] md:w-[336px] xl:w-[384px]" key={path.id}>
+              <SwiperSlide className="max-md:w-full md:w-[336px] xl:w-[384px]" key={path.id}>
                 <div className="swiper-slide-content overflow-hidden">
                   <Image
                     src={path.src}

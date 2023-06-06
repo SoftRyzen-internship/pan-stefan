@@ -17,7 +17,7 @@ function ProductSection() {
     >
       <div className="container text-center">
         <SectionHeader text={titleText} colored centered />
-        <ul className="mt-[68px] mb-[32px] md:mt-[80px] md:mb-[60px] flex flex-wrap items-center md:justify-center gap-x-8 xl:gap-x-8 gap-y-[72px] xl:gap-y-[80px]">
+        <ul className="mt-[68px] mb-[32px] md:mt-[80px] md:mb-[60px] md:flex md:flex-wrap md:items-center md:justify-center gap-x-8 xl:gap-x-8 gap-y-[72px] xl:gap-y-[80px]">
           {products.map(product => {
             return <ProductCard key={product.id} product={product} />;
           })}

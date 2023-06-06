@@ -7,7 +7,7 @@ function ProductCard(props: IProduct) {
 
   return (
     <li
-      className={`relative bg-lightWite text-center pt-[214px] pb-5 min-h-[508px] md:min-h-[472px] xl:min-h-[456px] w-[280px] md:w-[336px] xl:w-[384px] px-5 rounded-t-[200px] border border-purple-80 `}
+      className={`max-md:mx-auto max-md:mb-[72px] relative bg-lightWite text-center pt-[214px] pb-5 min-h-[508px] xs:min-h-[462px] md:min-h-[472px] xl:min-h-[456px] w-[280px] s:w-[300px] md:w-[336px] xl:w-[384px] px-5 rounded-t-[200px] border border-purple-80 `}
     >
       <div className="absolute left-0 right-0 w-[100%] top-[-5%]">
         {
