@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Fixel Display';
+  src: local('Fixel Display Light'), local('FixelDisplay-Light'),
+    url('../../public/fonts/FixelDisplay-Light.woff2') format('woff2'),
+    url('../../public/fonts/FixelDisplay-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fixel Display';
+  src: local('Fixel Display Medium'), local('FixelDisplay-Medium'),
+    url('../../public/fonts/FixelDisplay-Medium.woff2') format('woff2'),
+    url('../../public/fonts/FixelDisplay-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fixel Display';
+  src: local('Fixel Display Regular'), local('FixelDisplay-Regular'),
+    url('../../public/fonts/FixelDisplay-Regular.woff2') format('woff2'),
+    url('../../public/fonts/FixelDisplay-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fixel Display';
+  src: local('Fixel Display Bold'), local('FixelDisplay-Bold'),
+    url('../../public/fonts/FixelDisplay-Bold.woff2') format('woff2'),
+    url('../../public/fonts/FixelDisplay-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --text-color: #fff;
+  --text-size: 16px;
+}
+
+body {
+  background-color: theme('colors.lightWite');
+  color: var(--text-color);
+  font-size: var(--text-size);
+  font-family: Fixel Display;
+  font-weight: 400;
+}
+
+*:focus {
+  outline: none;
+}
+
+@layer components {
+  .section {
+    padding: 40px 0;
+
+    @media (min-width: 768px) {
+      padding: 80px 0;
+    }
+  }
+
+  .container {
+    margin: 0 auto;
+  }
+}
+
+.hero-bg {
+  background-image: url('../../public/assets/images/hero/bg.png');
+}
+
+.about-us-bg {
+  background-image: url('../../public/assets/images/about-us/about-us-bg.png');
+}
+
+.vacancy-bg-1 {
+  background: url('../../public/assets/images/vacancy/vacancybg1.png');
+}
+
+.vacancy-bg-2 {
+  background: url('../../public/assets/images/vacancy/vacancybg2.png');
+}
+
+.product1 {
+  background: url('../../public/assets/images/product/product1.png');
+}
+
+.product-bg {
+  background-image: url('../../public/assets/images/product/product-bg.svg');
+}

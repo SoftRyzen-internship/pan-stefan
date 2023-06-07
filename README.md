@@ -1,38 +1,104 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Проект для кондитерської "Pan Stefan"
 
-## Getting Started
+Сайт кондитерської "Pan Stefan" є одно-сторінковим сайтом, створеним для презентації продукції та
+послуг цієї кондитерської. Ми пропонуємо вишукані та смачні десерти, які задовольнять смаки навіть
+найвимогливіших клієнтів.
 
-First, run the development server:
+## Пере-використовувані компоненти
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+У нашому проекті "Pan Stefan" ми використовуємо кілька малих пере-використовуваних компонентів, які
+можуть бути легко використані для побудови веб-інтерфейсу, а саме:
+
+### Кнопка
+
+Компонент "Button" використовується для створення інтерактивних кнопок на веб-сторінці. Він має
+наступні пропси:
+
+- type (Обов'язковий. Тільки два значення: 'button' | 'submit'.)
+- text (текст кнопки)
+- onClick (необов’язковий. Функція, яка виконується при натисканні на кнопку)
+- lightHover (необов’язковий. Якщо вказаний - ефект ховера змінюється на "text-пурпурний, bg-білий")
+- long (необов’язковий. Вказується без значення. Якщо вказаний - кнопка стає 240рх шириною.)
+- centetred (необов’язковий. Вказується без значення. Центрує)
+- xwide (необов'язковий, кнопка буде на 100% ширини)
+
+Приклад використання:
+
+```javascript
+<Button type="submit" text="Замовити зараз" onClick={handleClick} centetred />
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Заголовок
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Компонент "SectionHeader" використовується для створення заголовків розділів або блоків на
+веб-сторінці. Він має наступні пропси:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- Hero (необов’язковий, якщо не вказаний – застосовуються стилі для заголовка звичайної секції, якщо
+  вказаний – будуть застосовані окремі стилі для великого тексту для Hero)
+- Text (обов’язковий, текст заголовка)
+- Centered (необов’язковий, вказується без значення, якщо вказаний – заголовок центрується)
+- Colored (необов’язковий, вказується без значення, якщо вказаний – колір пурпурний, якщо ні –
+  білий)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Приклад використання:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```javascript
+<Heading text="Про нас" Hero Centered Colored />
+```
 
-## Learn More
+### Поле вводу (input)
 
-To learn more about Next.js, take a look at the following resources:
+Компонент "FormInput" використовується для створення різних форм на веб-сторінці. Він має наступні
+пропси:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- data (об'єкт { name - текст; type: тип поля (наприклад, text, email); label: текст (label) або
+  плейсхолдера})
+- reg (reg={register} - register функція з UseForm)
+- errors (errors={errors} - функія помилки)
+- options (об'єкт, де вказани параметри для валідації. наприклад: required: "*Це поле обов'язкове",
+  pattern: { value: /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/, message: '*Не вірний формат номеру'})
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Приклад використання:
 
-## Deploy on Vercel
+```javascript
+<FormInput
+          data={field}
+          reg={register}
+          errors={errors}
+          options={workFieldsParams[field.name as keyof typeof workFieldsParams]}/>
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Ви можете переглянути макет проекту "Pan Stefan" [за посиланням тут.](https://www.figma.com/file/QwMYiKCk8yjSTzrSsdlaOG/Pan-Stefan?node-id=0-1)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Сайт "Pan Stefan" складається з наступних секцій:
+
+1. Головна:
+
+Ця секція привертає увагу користувачів і надає загальну інформацію про кондитерську "Pan Stefan".
+
+2. Про нас:
+
+Секція, що містить детальну інформацію про кондитерську "Pan Stefan", включаючи її історію, цінності
+та команду фахівців.
+
+3. Продукція:
+
+У цій секції представлена широка гама вишуканих десертів, які пропонує "Pan Stefan". Кожен десерт
+супроводжується зображенням, описом та ціною.
+
+4. Вакансії:
+
+В даній секції розміщена інформація про актуальні вакансії, доступні у кондитерській "Pan Stefan".
+Здійснюється запрошення для тих, хто бажає приєднатися до нашої талановитої команди.
+
+5. Фотогалерея:
+
+Секція, де можна переглянути красиві фотографії десертів та інтер'єру кондитерської "Pan Stefan".
+
+6. Контакти:
+
+У цій секції наведені контактні дані, такі як адреса, телефон та електронна пошта, для зв'язку з
+кондитерською "Pan Stefan".
+
+Сайт має хедер, в якому розміщена навігація по сторінці за допомогою скролінгу, що дозволяє
+користувачам швидко переходити до різних секцій сайту.
