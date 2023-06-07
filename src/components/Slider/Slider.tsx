@@ -46,6 +46,7 @@ const Slider = () => {
       </ul>
       <div className="relative h-8 flex items-center justify-center mt-8 md:mt-10 xl:mt-10">
         <div
+          tabIndex={0}
           className={`swiper-button-next  swiper-button-next-custom ${css['swiper-button-next-custom']} ${css['swiper-button-next']}`}
         >
           <NextIcon
@@ -56,6 +57,7 @@ const Slider = () => {
           />
         </div>
         <div
+          tabIndex={0}
           className={`swiper-button-prev swiper-button-prev-custom ${css['swiper-button-prev-custom']} ${css['swiper-button-prev']}`}
         >
           <PrevIcon
