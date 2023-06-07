@@ -1,6 +1,6 @@
 # Проект для кондитерської "Pan Stefan"
 
-<img src="public/assets/icon/logo.svg" alt="Лого компанії Pan Stefan" style="fill: red;" />
+<img src="public/assets/icon/instagram-icon.svg" alt="Лого компанії Pan Stefan" style="fill: red;" />
 
 ![Лого компанії Pan Stefan](public/assets/icon/logo.svg)
 
