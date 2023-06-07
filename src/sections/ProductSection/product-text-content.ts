@@ -39,6 +39,7 @@ const productTextContent = {
   titleText: 'Продукція',
   buttonText: 'Прайс',
   products: products,
+  link: 'https://docs.google.com/file/d/1Fe6GquL_kbyNxl0KABsyuWHAA72dRfhk/edit?usp=docslist_api&filetype=msexcel',
 };
 
 export default productTextContent;
