@@ -10,18 +10,12 @@ import Loader from 'components/Loader/Loader';
 
 import workFormFields from './workFormFields';
 import workFieldsParams from './workFieldsParams';
-import { IWorkFormData, InitialFormState } from './WorkFormTypes';
+import { IWorkFormData } from './WorkFormTypes';
 
 function WorkForm() {
   const [isSending, setIsSending] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
   const [finalMessage, setFinalMessage] = useState<string | null>(null);
-  // const [state, setState] = useState<InitialFormState>({
-  //   isSending: false,
-  //   error: false,
-  //   finalMessage: null,
-  // });
-  // const { isSending, error, finalMessage } = state;
 
   const STORAGE_KEY = 'workForm';
 
@@ -48,25 +42,17 @@ function WorkForm() {
 
   const onSubmitHandler = (formData: IWorkFormData) => {
     setIsSending(true);
-    // setState(prevState => ({ ...prevState, isSending: true }));
     axios
       .post('api/sendToGmail', formData)
       .then(({ data }) => {
         setIsSending(false);
         setFinalMessage(data.message);
-        // setState(prevState => ({ ...prevState, isSending: false, finalMessage: data.message }));
         reset();
       })
       .catch(error => {
         setIsSending(false);
         setError(true);
         setFinalMessage('Щось пішло не так');
-        // setState(prevState => ({
-        //   ...prevState,
-        //   error: true,
-        //   isSending: false,
-        //   finalMessage: 'Щось пішло не так',
-        // }));
       });
   };
 

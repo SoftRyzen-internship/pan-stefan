@@ -9,7 +9,6 @@ import FormNotification from 'components/FormNotification/FormNotification';
 import Loader from 'components/Loader/Loader';
 
 import Idata from './RegisterFormTypes';
-import { InitialFormState } from 'components/WorkForm/WorkFormTypes';
 import sendToTlg from 'services/api/sendToTlg';
 import fieldsParams from './fieldsParams';
 
@@ -17,12 +16,6 @@ function RegisterForm() {
   const [isSending, setIsSending] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
   const [finalMessage, setFinalMessage] = useState<string | null>(null);
-  // const [state, setState] = useState<InitialFormState>({
-  //   isSending: false,
-  //   error: false,
-  //   finalMessage: null,
-  // });
-  // const { isSending, error, finalMessage } = state;
 
   const STORAGE_KEY = 'registerForm';
 
@@ -49,28 +42,16 @@ function RegisterForm() {
   const onSubmitHandler = async (data: Idata) => {
     try {
       setIsSending(true);
-      // setState(prevState => ({ ...prevState, isSending: true, error: false }));
       const result = await sendToTlg(data);
       if (result.ok) {
         setIsSending(false);
         setFinalMessage('Незабаром наш менеджер звʼяжеться з вами');
-        // setState(prevState => ({
-        //   ...prevState,
-        //   isSending: false,
-        //   finalMessage: 'Незабаром наш менеджер звʼяжеться з вами',
-        // }));
         reset();
       }
     } catch (error) {
       setIsSending(false);
       setError(true);
       setFinalMessage('Щось пішло не так');
-      // setState(prevState => ({
-      //   ...prevState,
-      //   isSending: false,
-      //   error: true,
-      //   finalMessage: 'Щось пішло не так',
-      // }));
     }
   };
 
