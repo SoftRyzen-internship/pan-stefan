@@ -36,9 +36,12 @@ function WorkForm() {
     mode: 'all',
   });
 
-  if (typeof window !== undefined) {
-    useFormPersist(STORAGE_KEY, { watch, setValue });
-  }
+  const isBrowser = typeof window != 'undefined';
+  useFormPersist(STORAGE_KEY, {
+    watch,
+    setValue,
+    storage: isBrowser ? sessionStorage : undefined,
+  });
 
   const onSubmitHandler = (formData: IWorkFormData) => {
     setIsSending(true);
