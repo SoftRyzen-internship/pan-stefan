@@ -1,8 +1,6 @@
 # Проект для кондитерської "Pan Stefan"
 
-<img src="public/assets/svg/bg-hero-small.svg" alt="Лого компанії Pan Stefan" style="fill: red;" />
-
-![Лого компанії Pan Stefan](public/assets/images/hero/Hero%402x.png)
+<img src="public/assets/images/hero/Hero%402x.png" alt="Лого компанії Pan Stefan" size='100px' style="fill: red;" />
 
 Це репозиторій проекту "Pan Stefan", який є веб-додатком для кондитерської "Pan Stefan". Додаток
 реалізований з використанням **Next.js**, **TypeScript** та стилізований за допомогою **Tailwind
