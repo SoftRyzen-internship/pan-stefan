@@ -31,7 +31,7 @@ function AboutUsSection() {
             {descriptionText}
           </p>
           <Image
-            className="md:order-1 w-[280px] h-[210px] md:w-[336px]  md:h-[252px] xl:w-[592px] xl:h-[444px] max-md:mx-auto"
+            className="md:order-1 w-[280px] h-[210px] s:w-[336px]  s:h-[252px] xl:w-[592px] xl:h-[444px] max-md:mx-auto"
             src={mainImage}
             alt={imageAltText}
             width={592}

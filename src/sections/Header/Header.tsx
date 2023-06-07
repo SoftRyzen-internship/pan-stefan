@@ -41,6 +41,7 @@ function Header() {
                       {navigation.map(item => (
                         <li key={item.id}>
                           <Link
+                            tabIndex={0}
                             to={item.href}
                             smooth={true}
                             duration={500}
@@ -100,6 +101,7 @@ function Header() {
                           <Link
                             key={item.name}
                             to={item.href}
+                            tabIndex={0}
                             onClick={() => {
                               handleClick(item.href);
                               if (open) {
