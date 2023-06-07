@@ -39,8 +39,12 @@ function Header() {
                   <div className="hidden xl:block">
                     <ul className="ml-[123px] flex items-baseline space-x-[60px]">
                       {navigation.map(item => (
-                        <li key={item.id}>
-                          <Link
+                        <li key={item.id} onKeyUp={(event) => {
+                          if (event.key === 'Enter') {
+                            handleClick(item.href);
+                          }
+                        }}>
+                          <Link                            
                             tabIndex={0}
                             to={item.href}
                             smooth={true}
@@ -97,7 +101,11 @@ function Header() {
                   <div className="container flex flex-col items-center md:flex-row md:flex md:justify-between">
                     <ul className="space-y-5 md:space-y-[20px] flex flex-col items-center md:items-start md:justify-center mb-[35px] ">
                       {navigation.map(item => (
-                        <li key={item.id}>
+                        <li key={item.id} onKeyUp={(event) => {
+                          if (event.key === 'Enter') {
+                            handleClick(item.href);
+                          }
+                        }}>
                           <Link
                             key={item.name}
                             to={item.href}
