@@ -1,9 +1,9 @@
 import Slider from 'components/Slider/Slider';
 import SectionHeader from 'components/SectionHeader/SectionHeader';
-import photoGallarySectionTextContent from './gallery-section-text-content';
+import photoGallerySectionTextContent from './gallery-section-text-content';
 
 function PhotoGallerySection() {
-  const { headerText } = photoGallarySectionTextContent;
+  const { headerText } = photoGallerySectionTextContent;
   return (
     <section id="gallery" className="section">
       <div className="container">
