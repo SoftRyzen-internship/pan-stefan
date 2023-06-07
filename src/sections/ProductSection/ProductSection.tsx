@@ -7,7 +7,7 @@ import useBreakpoints from 'services/hooks/useBreakpoints';
 import productTextContent from './product-text-content';
 
 function ProductSection() {
-  const { titleText, buttonText, products } = productTextContent;
+  const { titleText, buttonText, products, link } = productTextContent;
   const { bigger768px } = useBreakpoints();
 
   return (
@@ -22,13 +22,7 @@ function ProductSection() {
             return <ProductCard key={product.id} product={product} />;
           })}
         </ul>
-        <LinkButton
-          download
-          text={buttonText}
-          long
-          link={{ target: 'assets/document/1.pdf' }}
-          centered
-        />
+        <LinkButton download text={buttonText} long link={{ target: link }} centered />
       </div>
     </section>
   );

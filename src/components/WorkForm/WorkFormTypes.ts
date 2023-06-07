@@ -4,9 +4,3 @@ export interface IWorkFormData {
   age: string,
   comment: string;
 };
-
-export interface InitialFormState  {
-  isSending: boolean,
-  error: boolean,
-  finalMessage: null | string,
-}

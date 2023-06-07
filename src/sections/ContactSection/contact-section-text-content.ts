@@ -11,13 +11,13 @@ const address = {
 };
 const phone = {
   title: 'Номер телефону: ',
-  description: '+380000000000',
-  link: 'tel:+380000000000',
+  description: '+380972789350',
+  link: 'tel:+380972789350',
 };
 const email = {
   title: 'Адреса електронної пошти: ',
-  description: 'pan.stefan@gmail.com',
-  link: 'mailto:pan.stefan@gmail.com',
+  description: 'olgaosipenko.j2@gmail.com',
+  link: 'mailto:olgaosipenko.j2@gmail.com',
 };
 const social = {
   title: 'Соцмережі: ',
