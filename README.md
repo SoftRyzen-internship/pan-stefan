@@ -1,5 +1,7 @@
 # Проект для кондитерської "Pan Stefan"
 
+<img src="public/assets/icon/logo.svg" alt="Лого компанії Pan Stefan" style="fill: red;" />
+
 ![Лого компанії Pan Stefan](public/assets/icon/logo.svg)
 
 Це репозиторій проекту "Pan Stefan", який є веб-додатком для кондитерської "Pan Stefan". Додаток
