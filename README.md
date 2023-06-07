@@ -9,10 +9,12 @@ CSS**. Сайт кондитерської "Pan Stefan" є одно-сторін
 
 ## Пере-використовувані компоненти
 
-````mermaid
-graph LR
-A[Батьківський компонент] -- props --> B[Дитячий компонент]
-B --> C(Subcomponent1) B --> D(Subcomponent2) B --> E(Subcomponent3)
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
 ```
 
 У нашому проекті "Pan Stefan" ми використовуємо кілька малих пере-використовуваних компонентів, які
@@ -35,7 +37,7 @@ B --> C(Subcomponent1) B --> D(Subcomponent2) B --> E(Subcomponent3)
 
 ```javascript
 <Button type="submit" text="Замовити зараз" onClick={handleClick} centetred />
-````
+```
 
 ### Заголовок
 
