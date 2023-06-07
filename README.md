@@ -1,6 +1,6 @@
 # Проект для кондитерської "Pan Stefan"
 
-<img src="public/assets/images/hero/Hero%402x.png" alt="Лого компанії Pan Stefan" size='100px' style="fill: red;" />
+<img src="public/assets/images/hero/Hero%402x.png" alt="Лого компанії Pan Stefan" width='100px' style="fill: red;" />
 
 Це репозиторій проекту "Pan Stefan", який є веб-додатком для кондитерської "Pan Stefan". Додаток
 реалізований з використанням **Next.js**, **TypeScript** та стилізований за допомогою **Tailwind
@@ -9,8 +9,9 @@ CSS**. Сайт кондитерської "Pan Stefan" є одно-сторін
 
 ## Пере-використовувані компоненти
 
-graph LR A[Батьківський компонент] -- props --> B[Дитячий компонент]
-
+````mermaid
+graph LR
+A[Батьківський компонент] -- props --> B[Дитячий компонент]
 B --> C(Subcomponent1) B --> D(Subcomponent2) B --> E(Subcomponent3)
 
 У нашому проекті "Pan Stefan" ми використовуємо кілька малих пере-використовуваних компонентів, які
@@ -33,7 +34,7 @@ B --> C(Subcomponent1) B --> D(Subcomponent2) B --> E(Subcomponent3)
 
 ```javascript
 <Button type="submit" text="Замовити зараз" onClick={handleClick} centetred />
-```
+````
 
 ### Заголовок
 
