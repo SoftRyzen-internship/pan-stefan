@@ -104,6 +104,7 @@ function Header() {
                         <li key={item.id} onKeyUp={(event) => {
                           if (event.key === 'Enter') {
                             handleClick(item.href);
+                                  close();
                           }
                         }}>
                           <Link
