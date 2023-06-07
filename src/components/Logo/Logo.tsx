@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import NextLink from 'next/link';
 
-import Logo from '@/public/assets/icon/LogoPan.svg';
+import Logo from '@/public/assets/icon/logo.svg';
 
 const CompanyLogo: FC = () => (
   <NextLink
