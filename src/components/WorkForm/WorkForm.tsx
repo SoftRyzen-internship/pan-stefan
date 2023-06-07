@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import useFormPersist from 'react-hook-form-persist';
 import axios from 'axios';
 
 import FormInput from 'components/FormInput/FormInput';
@@ -19,20 +20,28 @@ function WorkForm() {
   });
   const { isSending, error, finalMessage } = state;
 
+  const STORAGE_KEY = 'workForm';
+
   const {
     formState: { errors },
     handleSubmit,
     register,
     reset,
+    watch,
+    setValue,
   } = useForm({
     defaultValues: {
-      username: '',
-      phone: '',
-      age: '',
-      comment: '',
+      username: JSON.parse(sessionStorage.getItem(STORAGE_KEY)!)?.username || '',
+      phone: JSON.parse(sessionStorage.getItem(STORAGE_KEY)!)?.phone || '',
+      age: JSON.parse(sessionStorage.getItem(STORAGE_KEY)!)?.age || '',
+      comment: JSON.parse(sessionStorage.getItem(STORAGE_KEY)!)?.comment || '',
     },
     mode: 'all',
   });
+
+  if (typeof window !== undefined) {
+    useFormPersist(STORAGE_KEY, { watch, setValue });
+  }
 
   const onSubmitHandler = (formData: IWorkFormData) => {
     setState(prevState => ({ ...prevState, isSending: true }));

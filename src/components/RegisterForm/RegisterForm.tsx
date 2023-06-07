@@ -1,4 +1,5 @@
 import { useForm } from 'react-hook-form';
+import useFormPersist from 'react-hook-form-persist';
 import { useState } from 'react';
 
 import FormInput from 'components/FormInput/FormInput';
@@ -20,19 +21,27 @@ function RegisterForm() {
   });
   const { isSending, error, finalMessage } = state;
 
+  const STORAGE_KEY = 'registerForm';
+
   const {
     formState: { errors },
     handleSubmit,
     register,
     reset,
+    watch,
+    setValue,
   } = useForm({
     defaultValues: {
-      username: '',
-      phone: '',
-      comment: '',
+      username: JSON.parse(sessionStorage.getItem(STORAGE_KEY)!)?.username || '',
+      phone: JSON.parse(sessionStorage.getItem(STORAGE_KEY)!)?.phone || '',
+      comment: JSON.parse(sessionStorage.getItem(STORAGE_KEY)!)?.comment || '',
     },
     mode: 'all',
   });
+
+  if (typeof window !== undefined) {
+    useFormPersist(STORAGE_KEY, { watch, setValue });
+  }
 
   const onSubmitHandler = async (data: Idata) => {
     try {
