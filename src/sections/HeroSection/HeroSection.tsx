@@ -12,7 +12,7 @@ function HeroSection() {
   return (
     <section
       id="hero"
-      className="section pt-[60px] md:pt-[111px] md:pb-[91px] xl:pt-[60px] xl:pb-[65px] hero-bg bg-center"
+      className="section pt-[60px] md:pt-[111px] md:pb-[91px] xl:pt-[60px] xl:pb-[65px] hero-bg bg-center bg-no-repeat xl:bg-cover"
     >
       <Element name="main">
         <div className="container flex flex-col  md:flex-row md:justify-between xl:justify-start">

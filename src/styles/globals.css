@@ -77,14 +77,14 @@ body {
 }
 
 .hero-bg {
-  background-image: url('/assets/images/hero/bg.png');
+  background-image: url('/assets/images/hero/bg.svg');
 }
 
 .about-us-bg {
   background-image: url('/assets/images/about-us/about-us-bg.png');
 }
 
-.vacancy-bg-1 {
+.vacancybg1 {
   background: url('/assets/images/vacancy/vacancybg1.png');
 }
 

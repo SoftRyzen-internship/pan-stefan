@@ -54,16 +54,17 @@ const workFieldsParams: {
   age: {
     required: `*Це поле обов'язкове`,
     pattern: {
-      value: /^\d+$/,
-      message: '*Введіть будь ласка лише цифри',
+      value: /^[1-9]\d?$/,
+      message: '*Вік - двозначне число, не може починатися з "0"',
     },
-    min: {
-      value: 10,
-      message: '*Введіть не меньше 2 цифр',
-    },
+
     minLength: {
       value: 2,
       message: '*Введіть не меньше 2 цифр',
+    },
+    min: {
+      value: 1,
+      message: '*Вік не може починатися з "0"',
     },
     maxLength: {
       value: 2,
