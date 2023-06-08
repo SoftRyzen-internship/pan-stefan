@@ -10,7 +10,7 @@ import Loader from 'components/Loader/Loader';
 
 import workFormFields from './workFormFields';
 import workFieldsParams from './workFieldsParams';
-import { IWorkFormData } from './WorkFormTypes';
+import FormInputs from './WorkFormTypes';
 
 function WorkForm() {
   const [isSending, setIsSending] = useState<boolean>(false);
@@ -19,21 +19,17 @@ function WorkForm() {
   
   const STORAGE_KEY = 'workForm';
   const {
-    formState: { errors },
-    handleSubmit,
     register,
-    reset,
+    handleSubmit,
     watch,
     setValue,
-  } = useForm({
-    defaultValues: {
-      username: JSON.parse(sessionStorage.getItem(STORAGE_KEY)!)?.username || '',
-      phone: JSON.parse(sessionStorage.getItem(STORAGE_KEY)!)?.phone || '',
-      age: JSON.parse(sessionStorage.getItem(STORAGE_KEY)!)?.age || '',
-      comment: JSON.parse(sessionStorage.getItem(STORAGE_KEY)!)?.comment || '',
-    },
-    mode: 'all',
-  });
+    reset,
+    formState: { errors },
+  } = useForm<FormInputs>(
+    {
+      mode: 'all',
+    }
+  );
   
   const isBrowser = typeof window != 'undefined';
   useFormPersist(STORAGE_KEY, {
@@ -42,14 +38,15 @@ function WorkForm() {
     storage: isBrowser ? sessionStorage : undefined,
   });
 
-  const onSubmitHandler = (formData: IWorkFormData) => {
+  const onSubmitHandler = (formData: FormInputs) => {
     setIsSending(true);
     axios
       .post('api/sendToGmail', formData)
       .then(({ data }) => {
         setIsSending(false);
         setFinalMessage(data.message);
-        sessionStorage.removeItem(STORAGE_KEY);
+        reset();
+          sessionStorage.removeItem(STORAGE_KEY);
       })
       .catch(error => {
         setIsSending(false);

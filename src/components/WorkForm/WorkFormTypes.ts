@@ -1,6 +1,3 @@
-export interface IWorkFormData {
-  username: string;
-  phone: string;
-  age: string,
-  comment: string;
-};
+type FormInputs = Record<string, object>;
+
+export default FormInputs;

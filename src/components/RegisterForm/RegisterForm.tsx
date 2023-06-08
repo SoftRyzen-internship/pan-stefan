@@ -8,7 +8,7 @@ import Button from 'components/Button/Button';
 import FormNotification from 'components/FormNotification/FormNotification';
 import Loader from 'components/Loader/Loader';
 
-import Idata from './RegisterFormTypes';
+import FormInputs from './RegisterFormTypes';
 import sendToTlg from 'services/api/sendToTlg';
 import fieldsParams from './fieldsParams';
 
@@ -27,11 +27,6 @@ function RegisterForm() {
     watch,
     setValue,
   } = useForm({
-    defaultValues: {
-      username: JSON.parse(sessionStorage.getItem(STORAGE_KEY)!)?.username || '',
-      phone: JSON.parse(sessionStorage.getItem(STORAGE_KEY)!)?.phone || '',
-      comment: JSON.parse(sessionStorage.getItem(STORAGE_KEY)!)?.comment || '',
-    },
     mode: 'all',
   });
   
@@ -39,17 +34,18 @@ function RegisterForm() {
   useFormPersist(STORAGE_KEY, {
     watch,
     setValue,
-    storage: isBrowser ? sessionStorage : undefined,
+    storage: isBrowser ? window.sessionStorage : undefined,
   });
   
   
-  const onSubmitHandler = async (data: Idata) => {
+  const onSubmitHandler = async (data: FormInputs) => {
     try {
       setIsSending(true);
       const result = await sendToTlg(data);
       if (result.ok) {
         setIsSending(false);
         setFinalMessage('Незабаром наш менеджер звʼяжеться з вами');
+        reset();
         sessionStorage.removeItem(STORAGE_KEY);
       }
     } catch (error) {
