@@ -8,8 +8,8 @@
 @font-face {
   font-family: 'Fixel Display';
   src: local('Fixel Display Light'), local('FixelDisplay-Light'),
-    url('../../public/fonts/FixelDisplay-Light.woff2') format('woff2'),
-    url('../../public/fonts/FixelDisplay-Light.woff') format('woff');
+    url('/fonts/FixelDisplay-Light.woff2') format('woff2'),
+    url('/fonts/FixelDisplay-Light.woff') format('woff');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -18,8 +18,8 @@
 @font-face {
   font-family: 'Fixel Display';
   src: local('Fixel Display Medium'), local('FixelDisplay-Medium'),
-    url('../../public/fonts/FixelDisplay-Medium.woff2') format('woff2'),
-    url('../../public/fonts/FixelDisplay-Medium.woff') format('woff');
+    url('/fonts/FixelDisplay-Medium.woff2') format('woff2'),
+    url('/fonts/FixelDisplay-Medium.woff') format('woff');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -28,8 +28,8 @@
 @font-face {
   font-family: 'Fixel Display';
   src: local('Fixel Display Regular'), local('FixelDisplay-Regular'),
-    url('../../public/fonts/FixelDisplay-Regular.woff2') format('woff2'),
-    url('../../public/fonts/FixelDisplay-Regular.woff') format('woff');
+    url('/fonts/FixelDisplay-Regular.woff2') format('woff2'),
+    url('/fonts/FixelDisplay-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -38,8 +38,8 @@
 @font-face {
   font-family: 'Fixel Display';
   src: local('Fixel Display Bold'), local('FixelDisplay-Bold'),
-    url('../../public/fonts/FixelDisplay-Bold.woff2') format('woff2'),
-    url('../../public/fonts/FixelDisplay-Bold.woff') format('woff');
+    url('/fonts/FixelDisplay-Bold.woff2') format('woff2'),
+    url('/fonts/FixelDisplay-Bold.woff') format('woff');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -77,25 +77,25 @@ body {
 }
 
 .hero-bg {
-  background-image: url('../../public/assets/images/hero/bg.png');
+  background-image: url('/assets/images/hero/bg.png');
 }
 
 .about-us-bg {
-  background-image: url('../../public/assets/images/about-us/about-us-bg.png');
+  background-image: url('/assets/images/about-us/about-us-bg.png');
 }
 
 .vacancy-bg-1 {
-  background: url('../../public/assets/images/vacancy/vacancybg1.png');
+  background: url('/assets/images/vacancy/vacancybg1.png');
 }
 
 .vacancy-bg-2 {
-  background: url('../../public/assets/images/vacancy/vacancybg2.png');
+  background: url('/assets/images/vacancy/vacancybg2.png');
 }
 
 .product1 {
-  background: url('../../public/assets/images/product/product1.png');
+  background: url('/assets/images/product/product1.png');
 }
 
 .product-bg {
-  background-image: url('../../public/assets/images/product/product-bg.svg');
+  background-image: url('/assets/images/product/product-bg.svg');
 }
