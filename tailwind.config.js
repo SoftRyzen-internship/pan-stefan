@@ -4,8 +4,8 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        xs: '320px',
-        s: '480px',
+        // xs: '320px',
+        xs: '480px',
         md: '768px',
         xl: '1280px',
       },
@@ -35,15 +35,15 @@ module.exports = {
 
       container: {
         screens: {
-          xs: '320px',
-          s: '480px',
+          // xs: '320px',
+          xs: '480px',
           md: '768px',
           xl: '1280px',
         },
         padding: {
-          DEFAULT: '32px',
+          DEFAULT: '20px',
+          // xs: '20px',
           xs: '20px',
-          s: '20px',
           md: '32px',
           xl: '32px',
         },
