@@ -9,6 +9,10 @@ const workFieldsParams: {
       value: number;
       message: string;
     };
+    min?: {
+      value: number;
+      message: string;
+    };
     pattern?: {
       value: RegExp;
       message: string;
@@ -19,7 +23,7 @@ const workFieldsParams: {
     required: `*Це поле обов'язкове`,
     pattern: {
       value: /^[a-zA-Zа-яА-ЯґҐєЄіІїЇ'-\s]+$/,
-      message: '*"можна вводити літери, пробіл, тире, апостроф',
+      message: '*Можна вводити літери, пробіл, тире, апостроф',
     },
     minLength: {
       value: 2,
@@ -53,13 +57,17 @@ const workFieldsParams: {
       value: /^\d+$/,
       message: '*Введіть будь ласка лише цифри',
     },
+    min: {
+      value: 10,
+      message: '*Введіть не меньше 2 цифр',
+    },
     minLength: {
       value: 2,
       message: '*Введіть не меньше 2 цифр',
     },
     maxLength: {
-      value: 3,
-      message: '*Введіть не більше 3 цифр',
+      value: 2,
+      message: '*Введіть не більше 2 цифр',
     },
   },
 

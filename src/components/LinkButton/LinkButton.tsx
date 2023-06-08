@@ -7,7 +7,9 @@ function LinkButton(props: LinkButtonProps) {
 
   return download ? (
     <a
-      className={`cursor-pointer  ${centered ? 'mx-auto' : ''} ${long ? 'w-[240px]' : 'max-w-[240px]'} ${
+      className={`cursor-pointer  ${centered ? 'mx-auto' : ''} ${
+        long ? 'w-[240px]' : 'max-w-[240px]'
+      } ${
         lightHover
           ? 'hover:bg-lightWite hover:text-purple-80 focus:bg-lightWite focus:text-purple-80'
           : 'hover:bg-purple-30 focus:bg-purple-30'
@@ -15,6 +17,7 @@ function LinkButton(props: LinkButtonProps) {
         xwide ? 'w-[100%]' : ''
       }`}
       href={link.target}
+      rel="noopener noreferrer nofollow"
       target="_blank"
       tabIndex={0}
     >
@@ -26,7 +29,9 @@ function LinkButton(props: LinkButtonProps) {
       smooth={true}
       duration={500}
       tabIndex={0}
-      className={`cursor-pointer  ${centered ? 'mx-auto' : ''} ${long ? 'w-[240px]' : 'max-w-[240px]'} ${
+      className={`cursor-pointer  ${centered ? 'mx-auto' : ''} ${
+        long ? 'w-[240px]' : 'max-w-[240px]'
+      } ${
         lightHover
           ? 'hover:bg-lightWite hover:text-purple-80 focus:bg-lightWite focus:text-purple-80'
           : 'hover:bg-purple-30 focus:bg-purple-30'
