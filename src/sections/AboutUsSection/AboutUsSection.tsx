@@ -6,11 +6,11 @@ import SectionHeader from 'components/SectionHeader/SectionHeader';
 import useBreakpoints from 'services/hooks/useBreakpoints';
 
 import aboutUsSectionTextContent from './aboutUs-section-text-content';
-import mainImage from '@/public/assets/images/about-us/main-image.jpg';
+import mainImage from '@/public/assets/images/about-us/main-image@2x.jpg';
 
 function AboutUsSection() {
   const { headerText, descriptionText, imageAltText } = aboutUsSectionTextContent;
-  const { less480px, less768px, bigger1280px } = useBreakpoints();
+  const { less768px, bigger1280px } = useBreakpoints();
   return (
     <section
       id="aboutUs"
