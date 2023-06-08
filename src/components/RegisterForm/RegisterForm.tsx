@@ -49,7 +49,6 @@ function RegisterForm() {
       if (result.ok) {
         setIsSending(false);
         setFinalMessage('Незабаром наш менеджер звʼяжеться з вами');
-        reset();
       }
     } catch (error) {
       setIsSending(false);

@@ -50,7 +50,6 @@ function WorkForm() {
       .then(({ data }) => {
         setIsSending(false);
         setFinalMessage(data.message);
-        reset();
       })
       .catch(error => {
         setIsSending(false);
