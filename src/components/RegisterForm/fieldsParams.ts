@@ -17,8 +17,8 @@ const fieldsParams: {
 } = {
   username: {
     pattern: {
-      value: /[^\s]/,
-      message: '*Повинно містити символи',
+      value: /^[a-zA-Zа-яА-ЯґҐєЄіІїЇ'-\s]+$/,
+      message: '*Можна вводити літери, пробіл, тире, апостроф',
     },
     required: `*Це поле обов'язкове`,
     minLength: {
@@ -35,7 +35,7 @@ const fieldsParams: {
     required: `*Це поле обов'язкове`,
     pattern: {
       value: /^(\+380)\d{9}$/,
-      message: '*Введіть номер у такому форматі +380670000000',
+      message: '*Введіть номер у такому форматі +380000000000',
     },
     minLength: {
       value: 5,

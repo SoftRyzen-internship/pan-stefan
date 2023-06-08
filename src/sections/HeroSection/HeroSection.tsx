@@ -18,13 +18,13 @@ function HeroSection() {
         <div className="container flex flex-col  md:flex-row md:justify-between xl:justify-start">
           <div className="mb-[60px] md:mb-0 xl:mr-[162px] xl:mt-[80px]">
             <SectionHeader text={logoText} hero />
-            <p className="max-w-[280px] md:max-w-[336px] xl:max-w-[488px] mb-[28px] md:mb-[40px] xl:mb-[57px] text-black leading-[1.5] md:leading-[1.4] text-lg md:text-xl">
+            <p className=" md:max-w-[336px] xl:max-w-[488px] mb-[28px] md:mb-[40px] xl:mb-[57px] text-black leading-[1.5] md:leading-[1.4] text-lg md:text-xl">
               {descriptionText}
             </p>
             <LinkButton text={buttonText} link={{ target: 'products' }} />
           </div>
           <Image
-            className="w-[280px] h-[307px] max-md:mx-auto md:w-[336px] md:h-[368px] xl:w-[488px] xl:h-[543px]"
+            className="w-auto h-auto max-md:mx-auto md:w-[336px] md:h-[368px] xl:w-[488px] xl:h-[543px]"
             src={mainImage}
             alt={imageAltText}
             width={488}
