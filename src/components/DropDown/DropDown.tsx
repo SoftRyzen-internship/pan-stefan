@@ -46,6 +46,7 @@ function DropDown(props: DropDownProps) {
                     width={28}
                     height={28}
                     loading="lazy"
+                    aria-label="Закриття форми"
                   />
                 </button>
                 {children}
