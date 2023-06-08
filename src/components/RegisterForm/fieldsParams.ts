@@ -18,7 +18,7 @@ const fieldsParams: {
   username: {
     pattern: {
       value: /^[a-zA-Zа-яА-ЯґҐєЄіІїЇ'-\s]+$/,
-      message: '*"Можна вводити літери, пробіл, тире, апостроф',
+      message: '*Можна вводити літери, пробіл, тире, апостроф',
     },
     required: `*Це поле обов'язкове`,
     minLength: {
