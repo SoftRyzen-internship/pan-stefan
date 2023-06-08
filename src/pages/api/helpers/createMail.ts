@@ -1,7 +1,7 @@
 import { MailOwner } from './createMailTypes';
-import { IWorkFormData } from 'components/WorkForm/WorkFormTypes';
+import FormInputs from 'components/WorkForm/WorkFormTypes';
 
-function createMail(mailOwner: MailOwner, senderInfo: IWorkFormData) {
+function createMail(mailOwner: MailOwner, senderInfo: FormInputs) {
   const { username, phone, age, comment } = senderInfo;
   return {
     from: mailOwner,
