@@ -6,7 +6,7 @@ function ProductCard(props: IProduct) {
   const { category, productDescription, src } = product;
 
   return (
-    <li className="max-md:mx-auto max-md:mb-[32px] relative bg-lightWite text-center pt-[214px] pb-5 min-h-[508px] s:min-h-[462px] md:min-h-[472px] xl:min-h-[456px] w-[280px] s:w-[300px] md:w-[336px] xl:w-[384px] px-5 rounded-t-[200px] border border-purple-80 ">
+    <li className="max-md:mx-auto max-md:mb-[32px] relative bg-lightWite text-center pt-[214px] pb-5 min-h-[508px] xs:min-h-[462px] md:min-h-[472px] xl:min-h-[456px] w-[100%] min-[360px]:w-[320px] md:w-[336px] xl:w-[384px] px-5 rounded-t-[200px] border border-purple-80 ">
       <div className="absolute left-0 right-0 w-[100%] top-[-5%]">
         {
           <Image

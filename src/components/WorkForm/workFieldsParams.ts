@@ -18,8 +18,8 @@ const workFieldsParams: {
   username: {
     required: `*Це поле обов'язкове`,
     pattern: {
-      value: /[^\s]/,
-      message: '*Повинно містити символи',
+      value: /^[a-zA-Zа-яА-ЯґҐєЄіІїЇ'-\s]+$/,
+      message: '*"можна вводити літери, пробіл, тире, апостроф',
     },
     minLength: {
       value: 2,
