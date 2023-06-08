@@ -24,9 +24,7 @@ function ProductCard(props: IProduct) {
       <h3 className="relative block font-cormorant text-purple-80 font-semibold text-[32px] mb-[22px] leading-9	 w-[100%] after:absolute  after:bg-cardGradient after:w-[162px] after:h-[1px] after:bottom-[-10px] after:left-[50%] after:translate-x-[-50%] after:block">
         {category}
       </h3>
-      <div
-        className={`overflow-hidden h-[216px] md-[168px] xl-[144px] overflow-y-auto ${css['scrollbar-none']}`}
-      >
+      <div className="overflow-hidden h-[216px] md:h-[168px] xl:h-[144px]">
         <p className="text-base text-black">{productDescription}</p>
       </div>
     </li>
