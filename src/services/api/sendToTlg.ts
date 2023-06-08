@@ -1,7 +1,7 @@
-import Idata from 'components/RegisterForm/Idata';
+import FormInputs from 'components/RegisterForm/RegisterFormTypes';
 import axios from 'axios';
 
-const sendToTlg = async (formData: Idata) => {
+const sendToTlg = async (formData: FormInputs) => {
   const tgbot = process.env.NEXT_PUBLIC_TELEGRAM_TOKEN;
   const chat_id = process.env.NEXT_PUBLIC_TELEGRAM_CHAT_ID;
   const URI_API = `https://api.telegram.org/bot${tgbot}/sendMessage`;

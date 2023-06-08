@@ -1,5 +1,3 @@
-export default interface Idata {
-  comment: string;
-  phone: string;
-  username: string;
-};
+type FormInputs = Record<string, object>;
+
+export default FormInputs;
