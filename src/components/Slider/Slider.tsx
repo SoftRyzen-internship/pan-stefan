@@ -15,7 +15,7 @@ const Slider = () => {
   const { less768px, bigger1280px } = useBreakpoints();
   return (
     <>
-      <ul className="relative max-md:h-full md:h-[336px] xl:h-[384px]">
+      <div className="relative max-md:h-full md:h-[336px] xl:h-[384px]">
         <Swiper
           navigation={{
             nextEl: '.swiper-button-next',
@@ -26,24 +26,26 @@ const Slider = () => {
           modules={[Navigation]}
           className="flex items-center justify-center"
         >
-          {images.map(path => (
-            <li key={path.id} className="">
-              <SwiperSlide className="max-md:w-full md:w-[336px] xl:w-[384px]" key={path.id}>
-                <div className="swiper-slide-content overflow-hidden">
-                  <Image
-                    src={path.src}
-                    alt={path.name}
-                    width={384}
-                    height={384}
-                    loading="lazy"
-                    className="object-cover w-full cursor-move"
-                  />
-                </div>
-              </SwiperSlide>
-            </li>
-          ))}
+          <ul>
+            {images.map(path => (
+              <li key={path.id} className="">
+                <SwiperSlide className="max-md:w-full md:w-[336px] xl:w-[384px]" key={path.id}>
+                  <div className="swiper-slide-content overflow-hidden">
+                    <Image
+                      src={path.src}
+                      alt={path.name}
+                      width={384}
+                      height={384}
+                      loading="lazy"
+                      className="object-cover w-full cursor-move"
+                    />
+                  </div>
+                </SwiperSlide>
+              </li>
+            ))}
+          </ul>
         </Swiper>
-      </ul>
+      </div>
       <div className="relative h-8 flex items-center justify-center mt-8 md:mt-10 xl:mt-10">
         <div
           tabIndex={0}
