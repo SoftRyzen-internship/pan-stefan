@@ -16,9 +16,8 @@ function WorkForm() {
   const [isSending, setIsSending] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
   const [finalMessage, setFinalMessage] = useState<string | null>(null);
-
+  
   const STORAGE_KEY = 'workForm';
-
   const {
     formState: { errors },
     handleSubmit,
@@ -35,7 +34,7 @@ function WorkForm() {
     },
     mode: 'all',
   });
-
+  
   const isBrowser = typeof window != 'undefined';
   useFormPersist(STORAGE_KEY, {
     watch,
@@ -50,6 +49,7 @@ function WorkForm() {
       .then(({ data }) => {
         setIsSending(false);
         setFinalMessage(data.message);
+        sessionStorage.removeItem(STORAGE_KEY);
       })
       .catch(error => {
         setIsSending(false);
@@ -76,7 +76,7 @@ function WorkForm() {
             options={workFieldsParams[field.name as keyof typeof workFieldsParams]}
           />
         ))}
-        <Button type="submit" text="Відправити" centered xwide></Button>
+        <Button type="submit" text="Відправити" centered xwide />
       </form>
       {isSending && <Loader />}
     </div>

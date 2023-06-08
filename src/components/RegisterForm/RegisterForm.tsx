@@ -18,7 +18,7 @@ function RegisterForm() {
   const [finalMessage, setFinalMessage] = useState<string | null>(null);
 
   const STORAGE_KEY = 'registerForm';
-
+  
   const {
     formState: { errors },
     handleSubmit,
@@ -34,14 +34,15 @@ function RegisterForm() {
     },
     mode: 'all',
   });
-
+  
   const isBrowser = typeof window != 'undefined';
   useFormPersist(STORAGE_KEY, {
     watch,
     setValue,
     storage: isBrowser ? sessionStorage : undefined,
   });
-
+  
+  
   const onSubmitHandler = async (data: Idata) => {
     try {
       setIsSending(true);
@@ -49,6 +50,7 @@ function RegisterForm() {
       if (result.ok) {
         setIsSending(false);
         setFinalMessage('Незабаром наш менеджер звʼяжеться з вами');
+        sessionStorage.removeItem(STORAGE_KEY);
       }
     } catch (error) {
       setIsSending(false);
@@ -75,7 +77,7 @@ function RegisterForm() {
             options={fieldsParams[field.name as keyof typeof fieldsParams]}
           />
         ))}
-        <Button type="submit" text="Замовити" centered xwide></Button>
+        <Button type="submit" text="Замовити" centered xwide />
       </form>
       {isSending && <Loader />}
     </div>
