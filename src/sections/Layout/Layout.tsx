@@ -25,8 +25,10 @@ const Layout: FC<LayoutProps> = ({ children }) => {
         <title>Pan Stefan</title>
       </Head>
       <Header />
-      <main>{children}</main>
-      <OrderButton onClick={handleClick} />
+      <main>
+        {children}
+        <OrderButton onClick={handleClick} />
+      </main>
       <Footer />
 
       <DropDown isOpen={open} setIsOpen={setOpen}>
