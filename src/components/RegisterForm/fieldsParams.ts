@@ -1,3 +1,5 @@
+type ValidationFunction = (value: string) => boolean | string;
+
 const fieldsParams: {
   [key: string]: {
     required?: string;
@@ -9,6 +11,7 @@ const fieldsParams: {
       value: number;
       message: string;
     };
+    validate?: { noText: ValidationFunction };
     pattern?: {
       value: RegExp;
       message: string;
@@ -16,6 +19,10 @@ const fieldsParams: {
   };
 } = {
   username: {
+    validate: {
+      noText: (value: string) =>
+        !!value.match(/^(?!\s*$).+/) || `Ім'я не може містити лише пробіли`,
+    },
     pattern: {
       value: /^[a-zA-Zа-яА-ЯґҐєЄіІїЇ'-\s]+$/,
       message: '*Можна вводити літери, пробіл, тире, апостроф',

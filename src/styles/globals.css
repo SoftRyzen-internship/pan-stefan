@@ -59,7 +59,7 @@ body {
 }
 
 *:focus {
-  outline: none;
+  outline-color: theme('colors.purple.80');
 }
 
 @layer components {
