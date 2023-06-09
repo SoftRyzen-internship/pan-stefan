@@ -4,7 +4,7 @@ function SectionHeader(props: SectionHeaderProps) {
   const { hero, text, centered, colored } = props;
   return hero ? (
     <h1
-      className={`font-tanPearl font-normal text-purple-80 mb-[28px] md:mb-[40px] xl:mb-[41px] text-[60px] leading-[0.9] s:text-[52px] md:text-[80px] xl:text-[120px]`}
+      className={`font-tanPearl font-normal text-purple-80 mb-[36px] md:mb-[40px] xl:mb-[66px] text-[60px] leading-[0.9] s:text-[52px] md:text-[80px] xl:text-[120px]`}
     >
       {text}
     </h1>

@@ -24,7 +24,7 @@ function LinkButton(props: LinkButtonProps) {
       {text}
     </a>
   ) : (
-    <ScrollLink
+      <ScrollLink
       to={link.target}
       smooth={true}
       duration={500}
