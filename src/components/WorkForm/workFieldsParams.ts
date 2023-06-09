@@ -1,3 +1,5 @@
+type ValidationFunction = (value: string) => boolean | string;
+
 const workFieldsParams: {
   [key: string]: {
     required?: string;
@@ -9,6 +11,7 @@ const workFieldsParams: {
       value: number;
       message: string;
     };
+    validate?: { noText: ValidationFunction };
     min?: {
       value: number;
       message: string;
@@ -21,6 +24,10 @@ const workFieldsParams: {
 } = {
   username: {
     required: `*Це поле обов'язкове`,
+    validate: {
+      noText: (value: string) =>
+        !!value.match(/^(?!\s*$).+/) || `Ім'я не може містити лише пробіли`,
+    },
     pattern: {
       value: /^[a-zA-Zа-яА-ЯґҐєЄіІїЇ'-\s]+$/,
       message: '*Можна вводити літери, пробіл, тире, апостроф',
