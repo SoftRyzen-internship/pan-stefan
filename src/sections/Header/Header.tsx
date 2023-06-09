@@ -30,14 +30,14 @@ function Header() {
   return (
     <header>
       <div className="border-b border-lightBrown-30 relative ">
-        <Disclosure as="nav" className="container  px-5 md:px-8 xl:px-8">
+        <Disclosure as="nav" className="container px-5 md:px-8 xl:px-8">
           {({ open }) => (
             <>
-              <div className=" flex items-center justify-between py-5">
+              <div className="flex items-center justify-between pt-[18px] pb-[18px] md:pt-2 md:pb-2">
                 <div className="flex items-center">
                   <CompanyLogo />
                   <div className="hidden xl:block">
-                    <ul className="ml-[123px] flex items-baseline space-x-[60px]">
+                    <ul className="ml-[122px] flex items-baseline space-x-[60px]">
                       {navigation.map(item => (
                         <li
                           key={item.id}
