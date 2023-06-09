@@ -23,12 +23,6 @@
   top: 0;
   left: 53%;
   transform: translateY(50%);
-  @media (min-width: 768px) {
-    left: 51.5%;
-  }
-  @media (min-width: 1280px) {
-    left: 50%;
-  }
 }
 
 .swiper-button-prev.swiper-button-prev-custom {
@@ -36,10 +30,24 @@
   left: 30%;
   top: 0;
   transform: translateY(50%);
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .swiper-button-next.swiper-button-next-custom {
+    left: 51.5%;
+  }
+
+  .swiper-button-prev.swiper-button-prev-custom {
     left: 41.5%;
   }
-  @media (min-width: 1280px) {
+}
+
+@media (min-width: 1280px) {
+  .swiper-button-next.swiper-button-next-custom {
+    left: 50%;
+  }
+
+  .swiper-button-prev.swiper-button-prev-custom {
     left: 45%;
   }
 }

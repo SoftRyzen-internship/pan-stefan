@@ -65,14 +65,16 @@ body {
 @layer components {
   .section {
     padding: 40px 0;
-
-    @media (min-width: 768px) {
-      padding: 80px 0;
-    }
   }
 
   .container {
     margin: 0 auto;
+  }
+
+  @media (min-width: 768px) {
+    .section {
+      padding: 80px 0;
+    }
   }
 }
 
