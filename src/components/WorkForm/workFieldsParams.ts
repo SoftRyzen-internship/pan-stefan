@@ -60,7 +60,7 @@ const workFieldsParams: {
 
     minLength: {
       value: 2,
-      message: '*Введіть не меньше 2 цифр',
+      message: '*Введіть не менше 2 цифр',
     },
     min: {
       value: 1,
