@@ -11,7 +11,11 @@ const workFieldsParams: {
       value: number;
       message: string;
     };
-    validate?: { noText: ValidationFunction };
+    validate?: {
+      noText?: ValidationFunction;
+      noZero?: ValidationFunction;
+      isNumber?: ValidationFunction;
+    };
     min?: {
       value: number;
       message: string;
@@ -60,19 +64,17 @@ const workFieldsParams: {
 
   age: {
     required: `*Це поле обов'язкове`,
-    pattern: {
-      value: /^[1-9]\d?$/,
-      message: '*Вік - двозначне число, не може починатися з "0"',
+
+    validate: {
+      noZero: (value: string) => !value.match(/^0\d*$/) || `*Вік не може починатися з "0"`,
+      isNumber: (value: string) => !!value.match(/^\d+$/) || `*Можна вводити тільки числа`,
     },
 
     minLength: {
       value: 2,
       message: '*Введіть не менше 2 цифр',
     },
-    min: {
-      value: 1,
-      message: '*Вік не може починатися з "0"',
-    },
+
     maxLength: {
       value: 2,
       message: '*Введіть не більше 2 цифр',
