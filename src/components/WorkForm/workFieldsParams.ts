@@ -1,3 +1,5 @@
+type ValidationFunction = (value: string) => boolean | string;
+
 const workFieldsParams: {
   [key: string]: {
     required?: string;
@@ -9,6 +11,7 @@ const workFieldsParams: {
       value: number;
       message: string;
     };
+    validate?: { noText: ValidationFunction };
     min?: {
       value: number;
       message: string;
@@ -21,6 +24,10 @@ const workFieldsParams: {
 } = {
   username: {
     required: `*Це поле обов'язкове`,
+    validate: {
+      noText: (value: string) =>
+        !!value.match(/^(?!\s*$).+/) || `Ім'я не може містити лише пробіли`,
+    },
     pattern: {
       value: /^[a-zA-Zа-яА-ЯґҐєЄіІїЇ'-\s]+$/,
       message: '*Можна вводити літери, пробіл, тире, апостроф',
@@ -54,16 +61,17 @@ const workFieldsParams: {
   age: {
     required: `*Це поле обов'язкове`,
     pattern: {
-      value: /^\d+$/,
-      message: '*Введіть будь ласка лише цифри',
+      value: /^[1-9]\d?$/,
+      message: '*Вік - двозначне число, не може починатися з "0"',
     },
-    min: {
-      value: 10,
-      message: '*Введіть не меньше 2 цифр',
-    },
+
     minLength: {
       value: 2,
-      message: '*Введіть не меньше 2 цифр',
+      message: '*Введіть не менше 2 цифр',
+    },
+    min: {
+      value: 1,
+      message: '*Вік не може починатися з "0"',
     },
     maxLength: {
       value: 2,

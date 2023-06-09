@@ -10,32 +10,27 @@ import Loader from 'components/Loader/Loader';
 
 import workFormFields from './workFormFields';
 import workFieldsParams from './workFieldsParams';
-import { IWorkFormData } from './WorkFormTypes';
+import FormInputs from './WorkFormTypes';
 
 function WorkForm() {
   const [isSending, setIsSending] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
   const [finalMessage, setFinalMessage] = useState<string | null>(null);
-
+  
   const STORAGE_KEY = 'workForm';
-
   const {
-    formState: { errors },
-    handleSubmit,
     register,
-    reset,
+    handleSubmit,
     watch,
     setValue,
-  } = useForm({
-    defaultValues: {
-      username: JSON.parse(sessionStorage.getItem(STORAGE_KEY)!)?.username || '',
-      phone: JSON.parse(sessionStorage.getItem(STORAGE_KEY)!)?.phone || '',
-      age: JSON.parse(sessionStorage.getItem(STORAGE_KEY)!)?.age || '',
-      comment: JSON.parse(sessionStorage.getItem(STORAGE_KEY)!)?.comment || '',
-    },
-    mode: 'all',
-  });
-
+    reset,
+    formState: { errors },
+  } = useForm<FormInputs>(
+    {
+      mode: 'all',
+    }
+  );
+  
   const isBrowser = typeof window != 'undefined';
   useFormPersist(STORAGE_KEY, {
     watch,
@@ -43,7 +38,7 @@ function WorkForm() {
     storage: isBrowser ? sessionStorage : undefined,
   });
 
-  const onSubmitHandler = (formData: IWorkFormData) => {
+  const onSubmitHandler = (formData: FormInputs) => {
     setIsSending(true);
     axios
       .post('api/sendToGmail', formData)
@@ -51,6 +46,7 @@ function WorkForm() {
         setIsSending(false);
         setFinalMessage(data.message);
         reset();
+          sessionStorage.removeItem(STORAGE_KEY);
       })
       .catch(error => {
         setIsSending(false);
@@ -77,7 +73,7 @@ function WorkForm() {
             options={workFieldsParams[field.name as keyof typeof workFieldsParams]}
           />
         ))}
-        <Button type="submit" text="Відправити" centered xwide></Button>
+        <Button type="submit" text="Відправити" centered xwide />
       </form>
       {isSending && <Loader />}
     </div>

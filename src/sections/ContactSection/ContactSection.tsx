@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import { Element } from 'react-scroll';
 
 import SectionHeader from 'components/SectionHeader/SectionHeader';
 
@@ -18,9 +17,7 @@ function ContactSection() {
       className={`section relative bg-purple-30 md:pt-[80px] md:pb-[110px] xl:pb-[80px] `}
     >
       <div className="container">
-        <Element name="contacts">
-          <SectionHeader text={headerText} />
-        </Element>
+        <SectionHeader text={headerText} />
         <div className="md:flex  md:justify-between content-end">
           <ul>
             {contact.map((el, ind) => (
@@ -29,6 +26,7 @@ function ContactSection() {
                 {typeof el.description !== 'object' ? (
                   <a
                     href={el.link}
+                    rel="noopener noreferrer nofollow"
                     target="blank"
                     className="hover:text-purple-80 focus:text-purple-80 transition-all"
                   >
@@ -41,6 +39,7 @@ function ContactSection() {
                         <a
                           href={item.link}
                           target="blank"
+                          rel="noopener noreferrer nofollow"
                           className="fill-white hover:fill-purple-80 focus:fill-purple-80"
                         >
                           <item.src className="fill:inherit hover:inherit focus:inherit w-11 h-11 mr-5 last:mr-0" />

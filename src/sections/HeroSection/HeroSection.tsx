@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import { Element } from 'react-scroll';
 
 import SectionHeader from 'components/SectionHeader/SectionHeader';
 import LinkButton from 'components/LinkButton/LinkButton';
@@ -11,10 +10,9 @@ function HeroSection() {
   const { logoText, buttonText, descriptionText, imageAltText } = heroTextContent;
   return (
     <section
-      id="hero"
-      className="section pt-[60px] md:pt-[111px] md:pb-[91px] xl:pt-[60px] xl:pb-[65px] hero-bg bg-center"
+      id="main"
+      className="section pt-[60px] md:pt-[111px] md:pb-[91px] xl:pt-[60px] xl:pb-[65px] hero-bg bg-center bg-no-repeat xl:bg-cover"
     >
-      <Element name="main">
         <div className="container flex flex-col  md:flex-row md:justify-between xl:justify-start">
           <div className="mb-[60px] md:mb-0 xl:mr-[162px] xl:mt-[80px]">
             <SectionHeader text={logoText} hero />
@@ -31,7 +29,6 @@ function HeroSection() {
             height={543}
           />
         </div>
-      </Element>
     </section>
   );
 }
