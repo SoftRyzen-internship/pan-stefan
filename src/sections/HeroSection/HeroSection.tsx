@@ -8,6 +8,7 @@ import mainImage from '@/public/assets/images/hero/Hero@2x.png';
 
 function HeroSection() {
   const { logoText, buttonText, descriptionText, imageAltText } = heroTextContent;
+
   return (
     <section
       id="main"
