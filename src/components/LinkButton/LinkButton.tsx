@@ -1,4 +1,4 @@
-import { Link as ScrollLink } from 'react-scroll';
+import { scroller, Link as ScrollLink } from 'react-scroll';
 
 import LinkButtonProps from './LinkButtonTypes';
 
@@ -24,11 +24,19 @@ function LinkButton(props: LinkButtonProps) {
       {text}
     </a>
   ) : (
-      <ScrollLink
+    <ScrollLink
       to={link.target}
       smooth={true}
       duration={500}
       tabIndex={0}
+      onKeyUp={e => {
+        if (e.key === 'Enter') {
+          scroller.scrollTo(link.target, {
+            duration: 500,
+            smooth: true,
+          });
+        }
+      }}
       className={`cursor-pointer  ${centered ? 'mx-auto' : ''} ${
         long ? 'w-[240px]' : 'max-w-[240px]'
       } ${
