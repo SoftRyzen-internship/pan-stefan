@@ -23,7 +23,7 @@ function DropDown(props: DropDownProps) {
           <div className="fixed inset-0 bg-gray-800 bg-opacity-75 transition-opacity" />
         </Transition.Child>
 
-        <div className="fixed inset-0 z-10">
+        <div className="fixed inset-0 z-10 landscape:overflow-y-scroll">
           <div className="flex min-h-full justify-center items-center text-center">
             <Transition.Child
               as={Fragment}
@@ -34,7 +34,7 @@ function DropDown(props: DropDownProps) {
               leaveFrom="opacity-100 translate-y-0 sm:scale-100"
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-90"
             >
-              <Dialog.Panel className="relative border border-purple-80 h-auto w-[463px] xs:max-sm:p-6 p-10 transform rounded-[20px] bg-lightWite transition-all">
+              <Dialog.Panel className="relative border border-purple-80 h-auto w-[463px] xs:max-sm:p-6 p-10 transform rounded-[20px] bg-lightWite transition-all ">
                 <button
                   aria-label="Закриття форми"
                   type="button"
