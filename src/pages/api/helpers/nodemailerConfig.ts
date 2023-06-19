@@ -3,7 +3,6 @@ const nodemailerConfig = {
     port: 465,
     auth: {
       user: process.env.NEXT_PUBLIC_GMAIL_USER,
-    },
       pass: process.env.NEXT_PUBLIC_GMAIL_PASSWORD,
     },
 };
